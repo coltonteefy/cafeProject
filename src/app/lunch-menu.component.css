@@ -1,0 +1,19 @@
+.container {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+}
+.menu-items {
+  position: relative;
+  border: 1px solid red;
+  height:50px;
+  background-color: white;
+}
+
+.checkout-side-box {
+  position: relative;
+  border:1px solid red;
+  background-color: white;
+  height:50px;
+
+}

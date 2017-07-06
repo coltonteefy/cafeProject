@@ -1,0 +1,141 @@
+.container {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  background: white;
+  padding: 110px 50px 50px;
+  width:100%;
+  height: auto;
+}
+
+.choice {
+  height: 300px;
+  color: white;
+  border: 5px solid white;
+}
+
+#breakfast {
+  width: 100%;
+  background: url("http://images.contentful.com/406ai0ux7ky0/0000000200008ad000000000/ea66000a28e60e81f1ad07917e347c55/vans_waffles.jpeg?fm=jpg&q=65&fl=progressive&fit=thumb&w=400&h=300") no-repeat;
+
+}
+
+#breakfast:hover {
+  transform: scale(1.02);
+}
+
+#lunch {
+  width: 100%;
+  background: url("https://www.fb101.com/wp-content/uploads/2014/04/MeatloafSliders.jpg") no-repeat;
+}
+
+#lunch:hover {
+  transform: scale(1.02);
+}
+
+#drinks {
+  width: 100%;
+  background: url("http://acdn.newshunt.com/fetchdata11/20170408/witty/lifestyle/images/400x400_MIMAGEc944bb663c88c8f92af3b5f0da8806aa.jpg") no-repeat;
+}
+
+#drinks:hover {
+  transform: scale(1.02);
+}
+
+.choiceBtn {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background-color: #fcb004;
+  border-radius: 2px;
+  border: 1px solid #fcb004;
+  font-size: 17px;
+  width: 105px;
+  height: 40px;
+  position: relative;
+  color: white;
+  font-family: 'Advent Pro', sans-serif;
+  alignment: center;
+  top: 175px;
+}
+
+.choiceBtn:hover {
+  background-color: white;
+  color: #fcb004;
+}
+
+.description {
+  text-align: center;
+  /*background-color: rgba(0, 0, 0, 0.24);*/
+}
+
+/*#start {*/
+  /*text-align: center;*/
+  /*font-family: 'Advent Pro', sans-serif;*/
+  /*!*font-family: 'Ubuntu', sans-serif;  font-size: 50px;*!*/
+  /*font-size: 65px;*/
+  /*position: relative;*/
+  /*top: -50px;*/
+/*}*/
+
+.transition {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.main {
+  background: #f2f2e8;
+  padding: 30px 50px 50px;
+  column-count: 2;
+  column-gap: 40px;
+  position: relative;
+  margin-top: 75px;
+}
+
+.body-up {
+  position: relative;
+  top: 75px;
+}
+
+.body-down {
+  position: relative;
+  top: 0;
+  margin-top: 75px;
+}
+
+.menus {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  /*padding: 80px 0 65px 0;*/
+  text-align: center;
+  font-family: 'Ruluko', sans-serif;
+  /*background: #f1f1f1 url("http://static1.squarespace.com/static/556ddd04e4b0975c0bb32168/556ddecfe4b0be322ef6b552/592d2dc85016e1bf41af32ff/1497951365818/Jackfruit-caesar-salad-7-banner.jpg?format=1000w") no-repeat;*/
+  /*background-size: 1263px 415px;*/
+}
+.menu-img {
+  -webkit-filter: brightness(.5);
+  filter: brightness(.8);
+  position: relative;
+}
+
+#menu-words {
+  position: relative;
+  top: -58px;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+
+.check {
+  color: green;
+  position: relative;
+  left:12px;
+}
+
+@media screen and (max-width: 300px) {
+ #menu-img {
+   height:200px;
+ }
+}
+
