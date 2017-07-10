@@ -1,0 +1,63 @@
+.container {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 110px 50px 110px 50px;
+}
+
+.checkout {
+}
+
+.body-up {
+  position: relative;
+  top: 75px;
+}
+
+#cart {
+  font-family: 'Lobster', cursive;
+  border-bottom: 1px solid black;
+}
+
+ul {
+  list-style: none;
+}
+
+.each-item {
+  color: black;
+  display: flex;
+  padding: 14px 0 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+.cart-list {
+  position: relative;
+  width: 100%;
+}
+
+.cart-items {
+  position: relative;
+  margin: 0 auto;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.total-price {
+  position: relative;
+  bottom: 45px;
+}
+
+.fa-times {
+  position: relative;
+  top: -25px;
+}
+
+.total {
+  color: black;
+  font-family: 'Ruluko', sans-serif;
+  width: 100%;
+  position: relative;
+  bottom: -65px;
+}
+

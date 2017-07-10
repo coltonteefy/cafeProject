@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { DialogComponent } from './dialog.component';
 import {CartService} from "./cart.service";
 import {Cart} from "./cart";
@@ -11,12 +11,12 @@ import {Cart} from "./cart";
   providers: [DialogComponent, CartService]
 })
 export class LunchMenuComponent implements OnInit {
-
+  @Input() cart: Cart;
   innerWidth: number;
   cartId = 0;
 
-  public totalPrice = 0;
-  public cart = [];
+  totalPrice = 0;
+  cartItems: Cart[];
   public burgerList = [
     {
       name: 'Original Burger',
@@ -44,9 +44,6 @@ export class LunchMenuComponent implements OnInit {
     }
   ];
 
-
-  cartItems: Cart[];
-
   constructor(private cartService: CartService) {
   }
 
@@ -66,10 +63,10 @@ export class LunchMenuComponent implements OnInit {
     this.cartId++;
   }
 
-  // removeFromCart(id: number, price:number) {
-  //   if(this.totalPrice > 0){
-  //     this.totalPrice = Math.round((this.totalPrice - price)*100)/100;
-  //   }
-  //   this.cartItems = this.cartItems.filter(item => item.id !== id);
-  // }
+  removeFromCart(id: number, price:number) {
+    if(this.totalPrice > 0){
+      this.totalPrice = Math.round((this.totalPrice - price)*100)/100;
+    }
+    this.cartItems = this.cartItems.filter(item => item.id !== id);
+  }
 }

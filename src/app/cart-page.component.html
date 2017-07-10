@@ -1,0 +1,21 @@
+<div class="container" id="body">
+  <div class="checkout col-lg-12" id="cartID">
+    <h1 id="cart">Cart</h1>
+    <!--<h5 class="total-price pull-right">Total: ${{totalPrice}}</h5>-->
+    <ul class="cart-list">
+      <li *ngFor="let item of cartItems" class="cart-items row">
+        <h4 class="pull-left col-lg-8 col-md-6">{{item.name}}</h4>
+        <div class="col-sm-4">
+          <h5 class="">${{item.price}}</h5>
+          <i (click)="removeFromCart()" class="fa fa-times pull-right" aria-hidden="true"></i>
+        </div>
+      </li>
+      <br>
+    </ul>
+  </div>
+
+  <div class="total col-12">
+    <h2>Total: ${{totalPrice}}</h2>
+  </div>
+</div>
+

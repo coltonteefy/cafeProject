@@ -1,17 +1,29 @@
 import {Component, ElementRef, HostListener, OnInit, Renderer2} from '@angular/core';
+import {Cart} from "./cart";
+import {CartService} from './cart.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CartService]
 })
 export class AppComponent implements OnInit{
+  cart: Cart[];
+
   title = 'app';
   innerWidth: number;
 
-  constructor(private renderer2: Renderer2, private el: ElementRef) { }
+  constructor(private renderer2: Renderer2,
+              private el: ElementRef,
+              private cartService: CartService) { }
 
+
+  getCart(): void {
+    this.cartService.getCart().then(cart => this.cart = cart);
+  }
   ngOnInit() {
+    this.getCart();
   }
 
   @HostListener("window:scroll", [])
