@@ -1,12 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import { DialogComponent } from './dialog.component';
+import {CartService} from "./cart.service";
+import {Cart} from "./cart";
 
 
 @Component({
   selector: 'lunch-menu',
   templateUrl: './lunch-menu.component.html',
   styleUrls: ['./lunch-menu.component.css'],
-  providers: [DialogComponent]
+  providers: [DialogComponent, CartService]
 })
 export class LunchMenuComponent implements OnInit {
 
@@ -42,37 +44,32 @@ export class LunchMenuComponent implements OnInit {
     }
   ];
 
-  constructor() {
+
+  cartItems: Cart[];
+
+  constructor(private cartService: CartService) {
+  }
+
+  getCart(): void {
+    this.cartService.getCart().then(cart => this.cartItems = cart);
   }
 
   ngOnInit() {
-
+    this.getCart();
   }
 
   addToCart(name: string, price: number, id: number) {
     id = this.cartId;
-    this.cart.push({name, price, id});
+    this.cartItems.push({name, price, id});
 
     this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
     this.cartId++;
   }
 
-  removeFromCart(id: number, price:number) {
-    if(this.totalPrice > 0){
-      this.totalPrice = Math.round((this.totalPrice - price)*100)/100;
-    }
-    this.cart = this.cart.filter(item => item.id !== id);
-  }
-
-
-  // @HostListener("window:scroll", [])
-  // onWindowScroll() {
-  //
-  //   if (pageYOffset >= 575) {
-  //     this.renderer2.addClass(this.el.nativeElement.querySelector('#cartID'), 'cart-stick');
+  // removeFromCart(id: number, price:number) {
+  //   if(this.totalPrice > 0){
+  //     this.totalPrice = Math.round((this.totalPrice - price)*100)/100;
   //   }
-  //   else {
-  //     this.renderer2.removeClass(this.el.nativeElement.querySelector('#cartID'), 'cart-stick');
-  //   }
+  //   this.cartItems = this.cartItems.filter(item => item.id !== id);
   // }
 }
