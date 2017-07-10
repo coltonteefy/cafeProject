@@ -52,15 +52,17 @@ export class LunchMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCart();
+    this.cartService.changes
+      .subscribe(data => {
+        this.cart = data;
+      })
   }
 
-  addToCart(name: string, price: number, id: number) {
-    id = this.cartId;
-    this.cartItems.push({name, price, id});
+  addToCart(name: string, price: number) {
+    this.cartService.addToCart({name:name, price:price});
+    // this.cartItems.push({name:name, price:price, id:id});
 
     this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
-    this.cartId++;
   }
 
   removeFromCart(id: number, price:number) {

@@ -2,6 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryDataService} from "./in-memory-data.service";
 
 import {AppComponent} from './app.component';
 import {HomePageComponent} from './home-page.component';
@@ -9,11 +11,12 @@ import {NavbarComponent} from './navbar.component';
 import {AlertModule} from 'ngx-bootstrap';
 import {RouterModule} from "@angular/router";
 
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FooterComponent } from './footer.component';
 import { DialogComponent } from './dialog.component';
 import { LunchMenuComponent } from './lunch-menu.component';
 import { CartPageComponent } from './cart-page.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,6 @@ import { CartPageComponent } from './cart-page.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CarouselModule.forRoot(),
     AlertModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -52,7 +54,8 @@ import { CartPageComponent } from './cart-page.component';
         redirectTo: '',
         pathMatch: 'prefix'
       }
-    ])
+    ]),
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [],
   bootstrap: [AppComponent, NavbarComponent]

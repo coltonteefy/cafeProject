@@ -61,3 +61,17 @@ ul {
   bottom: -65px;
 }
 
+.purchase-btn {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background-color: #fcb004;
+  border-radius: 2px;
+  border: 1px solid #fcb004;
+  font-size: 17px;
+  width: 105px;
+  height: 40px;
+  position: relative;
+  color: white;
+  font-family: 'Advent Pro', sans-serif;
+  alignment: center;
+}
+

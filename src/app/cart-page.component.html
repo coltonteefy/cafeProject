@@ -14,8 +14,11 @@
     </ul>
   </div>
 
-  <div class="total col-12">
-    <h2>Total: ${{totalPrice}}</h2>
+  <div class="total row">
+    <h2 class="col-12">Total: ${{totalPrice}}</h2>
+    <div class="col-12">
+      <button type="button" (click)="purchase()" class="purchase-btn col-6">Order</button>
+    </div>
   </div>
 </div>
 
