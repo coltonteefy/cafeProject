@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  /*background-color: rgba(0, 0, 0, 0.5);*/
   z-index: 999;
 }
 
@@ -17,17 +17,17 @@
   left: 0;
   margin-right: auto;
   margin-left: auto;
-  min-height: 95px;
-  width: 75%;
-  max-width: 385px;
   background-color: #fff;
-  padding: 12px;
+  height: 65px;
+  width: 25%;
+  text-align: center;
+  font-size: 10px;
   box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
 }
 
 @media (min-width: 768px) {
   .dialog {
-    top: 40px;
+    top: 0;
   }
 }
 

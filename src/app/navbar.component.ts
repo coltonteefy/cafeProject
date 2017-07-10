@@ -1,5 +1,8 @@
-import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {trigger, state, style,animate,transition} from "@angular/animations";
+
+import "rxjs/add/observable/timer";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'navbar',
@@ -18,32 +21,55 @@ import {trigger, state, style,animate,transition} from "@angular/animations";
     ])
   ]
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
 
-  menuState: string = 'out';
 
+  private timer;
   private LOGO = './assets/upsLogo.gif';
-  // private headImg1 = 'https://ak8.picdn.net/shutterstock/videos/22362667/thumb/4.jpg';
-  // private headImg2 = 'http://www.tamron.eu/fileadmin/user_upload/magazin/moody-food/moody-food_header_grafiken.jpg';
-  // private headImg3 = 'https://t4.ftcdn.net/jpg/01/35/33/47/240_F_135334771_keMi6dpGt0l35mcuf1C12QgiwYZj5yCf.jpg';
-  // private headImg4 = 'http://www.dinemarket.com/uploads/8/9/4/3/89432208/dm-banner-main-img-04_orig.jpg';
-  private headImg5 = 'https://www.nycemeal.com/assets/images/banner-5-mobile.jpg';
-  private headImg6 = 'http://www.ohsu.edu/xd/about/services/food-and-nutrition/where-to-eat/images/Nutrition%20Home%20page%20banner--homepagebanner.jpg';
-  private headImg7 = 'http://www.fyp365.com/wp-content/uploads/2017/06/fyp-banner-4.jpg';
-  private youTube = 'https://youtu.be/PCZLNg_ze_M';
+  i = -1;
+  menuState: string = 'out';
+  foodPics = [
+    //grill chesse and chicken
+    'http://www.cincinnatimagazine.com/wp-content/uploads/sites/20/2015/03/CM_MAR15_FEATURE_T10_ABI1-e1425438722184.jpg',
+    //table of everything
+    'http://thenewlywedscookbook.com/wp-content/uploads/2015/01/homemade-blueberry-sauce-3-1000x600.jpg',
+    //sandwich pile
+    'https://static1.squarespace.com/static/55d25e52e4b075ba97049c9c/55d2786fe4b0ac4433e4c8cd/560aa0cde4b020611706a74a/1443537105903/panini-stack-min.jpg',
+    //sandwich and pasta
+    'http://cmzone.vzbqbxhynotw9ion96xv.netdna-cdn.com/wp-content/uploads/2016/09/back-to-biz-lunch-boxes-hero.jpg'
+  ];
+  currentPic = this.foodPics[this.i];
 
 
 
-
-  constructor(private renderer2: Renderer2, private el: ElementRef) { }
-
+  constructor() { }
 
   ngOnInit() {
     // this.onWindowScroll();
+    this.changePic();
+
+    this.timer = Observable.timer(0,5000).subscribe(t => {
+      this.changePic();
+    })
   }
 
-  toggleMenu() {
-    this.menuState = this.menuState === 'out' ? 'in' : 'out';
-    console.log(this.menuState);
+  ngOnDestroy() {
+    this.timer.unsubscribe();
   }
+
+  changePic(){
+    if(this.i >= 3){
+      this.i = -1;
+      this.currentPic = this.foodPics[this.i];
+      this.i = this.i + 1;
+    }
+    else
+      this.i = this.i + 1;
+      this.currentPic = this.foodPics[this.i];
+  }
+
+  // toggleMenu() {
+  //   this.menuState = this.menuState === 'out' ? 'in' : 'out';
+  //   console.log(this.menuState);
+  // }
 }

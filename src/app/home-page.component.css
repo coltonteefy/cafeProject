@@ -3,7 +3,7 @@
   margin: 0 auto;
   position: relative;
   background: white;
-  padding: 110px 50px 50px;
+  padding: 110px 50px 110px 50px;
   width:100%;
   height: auto;
 }
@@ -17,7 +17,7 @@
 #breakfast {
   width: 100%;
   background: url("http://images.contentful.com/406ai0ux7ky0/0000000200008ad000000000/ea66000a28e60e81f1ad07917e347c55/vans_waffles.jpeg?fm=jpg&q=65&fl=progressive&fit=thumb&w=400&h=300") no-repeat;
-
+  background-size: cover;
 }
 
 #breakfast:hover {
@@ -27,6 +27,7 @@
 #lunch {
   width: 100%;
   background: url("https://www.fb101.com/wp-content/uploads/2014/04/MeatloafSliders.jpg") no-repeat;
+  background-size: cover;
 }
 
 #lunch:hover {
@@ -36,6 +37,7 @@
 #drinks {
   width: 100%;
   background: url("http://acdn.newshunt.com/fetchdata11/20170408/witty/lifestyle/images/400x400_MIMAGEc944bb663c88c8f92af3b5f0da8806aa.jpg") no-repeat;
+  background-size: cover;
 }
 
 #drinks:hover {
@@ -54,7 +56,7 @@
   color: white;
   font-family: 'Advent Pro', sans-serif;
   alignment: center;
-  top: 175px;
+  /*top: 175px;*/
 }
 
 .choiceBtn:hover {
@@ -63,8 +65,13 @@
 }
 
 .description {
-  text-align: center;
+  /*text-align: center;*/
   /*background-color: rgba(0, 0, 0, 0.24);*/
+  background-color: rgba(0, 0, 0, 0.32);
+  position: relative;
+  top: 210px;
+  padding: 1px 23px 5px 30px;
+  margin: 0 auto;
 }
 
 /*#start {*/
@@ -95,12 +102,6 @@
 .body-up {
   position: relative;
   top: 75px;
-}
-
-.body-down {
-  position: relative;
-  top: 0;
-  margin-top: 75px;
 }
 
 .menus {

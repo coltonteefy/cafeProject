@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import { DialogComponent } from './dialog.component';
 
 @Component({
   selector: 'home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
-  providers: [DialogComponent]
+  styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
 
@@ -13,12 +11,8 @@ export class HomePageComponent implements OnInit {
   private menuHeader = 'http://static1.squarespace.com/static/556ddd04e4b0975c0bb32168/556ddecfe4b0be322ef6b552/592d2dc85016e1bf41af32ff/1497951365818/Jackfruit-caesar-salad-7-banner.jpg?format=1000w';
 
   constructor() { }
-  showDialog = false;
 
   ngOnInit() {
   }
 
-  onClick() {
-
-  }
 }

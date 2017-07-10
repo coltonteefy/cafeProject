@@ -13,6 +13,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FooterComponent } from './footer.component';
 import { DialogComponent } from './dialog.component';
 import { LunchMenuComponent } from './lunch-menu.component';
+import { CartPageComponent } from './cart-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LunchMenuComponent } from './lunch-menu.component';
     NavbarComponent,
     FooterComponent,
     DialogComponent,
-    LunchMenuComponent
+    LunchMenuComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,10 @@ import { LunchMenuComponent } from './lunch-menu.component';
       {
         path: 'lunch-menu',
         component: LunchMenuComponent
+      },
+      {
+        path: 'cart-page',
+        component: CartPageComponent
       },
       {
         path: '**',

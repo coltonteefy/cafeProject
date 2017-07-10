@@ -1,27 +1,27 @@
-<!--<button (click)="showDialog = !showDialog" class="btn" style="background-color: white; position: relative">Open</button>-->
-
 <div class="container row transition" id="body">
-  <div class="menus col-lg-12">
-    <img class="menu-img col-lg-12" [src]="menuHeader">
-    <h1 class="" id="menu-words">Menu Choices</h1>
-  </div>
+  <!--<div class="menus col-lg-12">-->
+    <!--<img class="menu-img col-lg-12" [src]="menuHeader">-->
+    <!--<h1 class="" id="menu-words">Menu Choices</h1>-->
+  <!--</div>-->
 
   <div class="choice col-lg-4 col-md-4 col-sm-12 col-xs-12" id="breakfast">
     <h2 class="description">Breakfast<br>
       <button type="button" class="choiceBtn btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" (click)="onClick()" >Order</button>
     </h2>
   </div>
+
   <div class="choice col-lg-4 col-md-4 col-sm-12 col-xs-12" id="lunch">
     <h2 class="description">Lunch<br>
       <a href="lunch-menu"><button class="choiceBtn">Order</button></a>
     </h2>
-
   </div>
+
   <div class="choice col-lg-4 col-md-4 col-sm-12 col-xs-12" id="drinks">
     <h2 class="description">Drinks<br>
       <button class="choiceBtn">Order</button>
     </h2>
   </div>
+
 </div>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
@@ -31,9 +31,3 @@
     </div>
   </div>
 </div>
-
-
-
-<app-dialog [(visible)]="showDialog">
-  <h1>Order Success <i class="fa fa-check-circle-o check" aria-hidden="true"></i></h1>
-</app-dialog>
