@@ -10,7 +10,7 @@
 }
 
 cart-page {
-  max-height: 400px;
+  /*max-height: 400px;*/
   overflow: auto;
   border-left: 1px solid rgba(0, 0, 0, 0.17);
   position: relative;

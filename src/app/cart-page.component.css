@@ -55,10 +55,12 @@ ul {
 
 .total {
   color: black;
+  background-color: white;
   font-family: 'Ruluko', sans-serif;
   width: 100%;
   position: relative;
   bottom: -65px;
+  padding: 40px 0 64px 0;
 }
 
 .purchase-btn {

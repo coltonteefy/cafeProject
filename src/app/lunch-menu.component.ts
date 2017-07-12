@@ -62,7 +62,11 @@ export class LunchMenuComponent implements OnInit {
     this.cartService.addToCart({name:name, price:price, id:this.cartId});
     // this.cartItems.push({name:name, price:price, id:id});
 
+    this.cartService.addCost(this.cartId);
+
     this.cartId++;
-    this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
+
+
+    // this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
   }
 }

@@ -11,14 +11,11 @@ import 'rxjs/add/operator/pluck';
 })
 export class CartPageComponent implements OnInit {
   cart: Cart;
-  totalPrice = 0;
   cartItems: Cart[];
+  totalCost = this.cartService.totalSum;
 
-  constructor(private cartService: CartService) { }
-
-  // getCart(): void {
-  //   // this.cartService.getCart().then(cart => this.cartItems = cart);
-  // }
+  constructor(private cartService: CartService) {
+  }
 
   ngOnInit() {
     this.cartService.changes
@@ -28,12 +25,16 @@ export class CartPageComponent implements OnInit {
       })
   }
 
-  purchase(){
-    console.log("purchase works");
+
+
+  purchase() {
+    this.cartService.clearOrder();
   }
 
   removeFromCart(id: any) {
     this.cartService.deleteFromCart(id);
+
+    console.log(this.cartService.getTotal());
   }
 
 }

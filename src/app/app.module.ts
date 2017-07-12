@@ -2,9 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {InMemoryWebApiModule} from "angular-in-memory-web-api";
-import {InMemoryDataService} from "./in-memory-data.service";
-
 import {AppComponent} from './app.component';
 import {HomePageComponent} from './home-page.component';
 import {NavbarComponent} from './navbar.component';
@@ -55,7 +52,6 @@ import { CartPageComponent } from './cart-page.component';
         pathMatch: 'prefix'
       }
     ]),
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [],
   bootstrap: [AppComponent, NavbarComponent]
