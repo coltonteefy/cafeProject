@@ -7,7 +7,7 @@
         <h4 class="pull-left col-lg-8 col-md-6">{{item.name}}</h4>
         <div class="col-sm-4">
           <h5 class="">${{item.price}}</h5>
-          <i (click)="removeFromCart()" class="fa fa-times pull-right" aria-hidden="true"></i>
+          <i (click)="removeFromCart(item.id)" class="fa fa-times pull-right" aria-hidden="true"></i>
         </div>
       </li>
       <br>

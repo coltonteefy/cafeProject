@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { Cart } from './cart';
-import { CART } from './mock-cart-items';
+import {Cart} from './cart';
+import {CART} from './mock-cart-items';
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 import {Observable} from "rxjs/Observable";
 
 //read:
 //https://angularclass.com/blog/create-a-simple-reactive-store-for-angular-2/
-const _store = new BehaviorSubject({cart:[]});
+const _store = new BehaviorSubject({cart: []});
 
 @Injectable()
 export class CartService {
@@ -41,15 +41,23 @@ export class CartService {
     this.setState(current);
   }
 
-  deleteFromCart(index: number) {
+  deleteFromCart(id: any) {
     let current = Object.assign({}, this.getState());
-    current.cart.splice(index,1);
+    // console.log(current.cart[0]);
 
-    this.setState(current);
+    console.log("new click");
+    for (let i = 0; i < current.cart.length; i++) {
+      if (id !== current.cart[i].id) {
+        // console.log(current.cart[id]);
+      }
+
+      if (id === current.cart[i].id) {
+        console.log(current.cart[id]);
+        current.cart.splice(i, 1);
+      }
+    }
   }
-
 }
-
 
 export class State {
   cart: any[] = [];

@@ -16,21 +16,24 @@ export class CartPageComponent implements OnInit {
 
   constructor(private cartService: CartService) { }
 
-  getCart(): void {
-    // this.cartService.getCart().then(cart => this.cartItems = cart);
-  }
+  // getCart(): void {
+  //   // this.cartService.getCart().then(cart => this.cartItems = cart);
+  // }
 
   ngOnInit() {
     this.cartService.changes
       .pluck('cart')
       .subscribe((data: any[]) => {
-        debugger;
         this.cartItems = data;
       })
   }
 
   purchase(){
     console.log("purchase works");
+  }
+
+  removeFromCart(id: any) {
+    this.cartService.deleteFromCart(id);
   }
 
 }
