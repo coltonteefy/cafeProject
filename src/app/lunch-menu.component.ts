@@ -21,7 +21,7 @@ export class LunchMenuComponent implements OnInit {
     {
       name: 'Original Burger',
       description: 'Beef patty with tomato, lettuce, onion and pickles',
-      image: 'https://s-media-cache-ak0.pinimg.com/736x/fb/1a/11/fb1a11c661910352dc5d1b988aceb8cf--angus-burger-food-menu.jpg',
+      image: 'http://img1.cookinglight.timeinc.net/sites/default/files/styles/300x300/public/image/2015/06/main/oh3959p159-simple-brisket-burgers.jpg?itok=_7dY5E5R',
       price: 4.99
     },
     {
@@ -60,13 +60,6 @@ export class LunchMenuComponent implements OnInit {
 
   addToCart(name: string, price: number) {
     this.cartService.addToCart({name:name, price:price, id:this.cartId});
-    // this.cartItems.push({name:name, price:price, id:id});
-
-    this.cartService.addCost(this.cartId);
-
     this.cartId++;
-
-
-    // this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
   }
 }

@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {trigger, state, style,animate,transition} from "@angular/animations";
 
 import "rxjs/add/observable/timer";
 import {Observable} from "rxjs/Observable";
@@ -8,26 +7,13 @@ import {Observable} from "rxjs/Observable";
   selector: 'navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  animations: [
-    trigger('shrinkOut', [
-      state('in', style({height: '50px'})),
-      state('out', style({height: '0px'})),
-      transition('in => out', (animate('400ms ease-in-out'))),
-      transition('out => in', (animate('400ms ease-in-out')))
-      // transition('* => void', [
-      //   style({height: '*'}),
-      //   animate(250, style({height: 0}))]
-      // )
-    ])
-  ]
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
 
   private timer;
   private LOGO = './assets/upsLogo.gif';
-  i = -1;
-  menuState: string = 'out';
+  i = 0;
   foodPics = [
     //grill chesse and chicken
     'http://www.cincinnatimagazine.com/wp-content/uploads/sites/20/2015/03/CM_MAR15_FEATURE_T10_ABI1-e1425438722184.jpg',
@@ -67,9 +53,4 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.i = this.i + 1;
       this.currentPic = this.foodPics[this.i];
   }
-
-  // toggleMenu() {
-  //   this.menuState = this.menuState === 'out' ? 'in' : 'out';
-  //   console.log(this.menuState);
-  // }
 }

@@ -54,7 +54,7 @@ import { CartPageComponent } from './cart-page.component';
     ]),
   ],
   providers: [],
-  bootstrap: [AppComponent, NavbarComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

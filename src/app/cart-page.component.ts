@@ -12,20 +12,18 @@ import 'rxjs/add/operator/pluck';
 export class CartPageComponent implements OnInit {
   cart: Cart;
   cartItems: Cart[];
-  totalCost = this.cartService.totalSum;
+  totalCost = 0;
 
   constructor(private cartService: CartService) {
   }
 
   ngOnInit() {
     this.cartService.changes
-      .pluck('cart')
-      .subscribe((data: any[]) => {
-        this.cartItems = data;
+      .subscribe((data: any) => {
+        this.cartItems = data.cart;
+        this.totalCost = data.total
       })
   }
-
-
 
   purchase() {
     this.cartService.clearOrder();
@@ -33,8 +31,6 @@ export class CartPageComponent implements OnInit {
 
   removeFromCart(id: any) {
     this.cartService.deleteFromCart(id);
-
-    console.log(this.cartService.getTotal());
   }
 
 }
