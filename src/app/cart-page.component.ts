@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Cart} from './cart'
 import {CartService} from "./cart.service";
-
+import 'rxjs/add/operator/pluck';
 
 @Component({
   selector: 'cart-page',
@@ -10,18 +10,30 @@ import {CartService} from "./cart.service";
   providers: [CartService]
 })
 export class CartPageComponent implements OnInit {
-  @Input() cart: Cart;
+  cart: Cart;
   totalPrice = 0;
   cartItems: Cart[];
 
   constructor(private cartService: CartService) { }
 
-  getCart(): void {
-    this.cartService.getCart().then(cart => this.cartItems = cart);
-  }
+  // getCart(): void {
+  //   // this.cartService.getCart().then(cart => this.cartItems = cart);
+  // }
 
   ngOnInit() {
-    this.getCart();
+    this.cartService.changes
+      .pluck('cart')
+      .subscribe((data: any[]) => {
+        this.cartItems = data;
+      })
+  }
+
+  purchase(){
+    console.log("purchase works");
+  }
+
+  removeFromCart(id: any) {
+    this.cartService.deleteFromCart(id);
   }
 
 }

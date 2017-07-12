@@ -20,10 +20,14 @@ export class AppComponent implements OnInit{
 
 
   getCart(): void {
-    this.cartService.getCart().then(cart => this.cart = cart);
+    this.cartService.getCart().then(cart => {});
   }
   ngOnInit() {
-    this.getCart();
+    //this.getCart();
+    this.cartService.changes
+      .subscribe(data => {
+        this.cart = data;
+      })
   }
 
   @HostListener("window:scroll", [])

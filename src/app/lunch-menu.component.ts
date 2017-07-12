@@ -47,26 +47,22 @@ export class LunchMenuComponent implements OnInit {
   constructor(private cartService: CartService) {
   }
 
-  getCart(): void {
-    this.cartService.getCart().then(cart => this.cartItems = cart);
-  }
+  // getCart(): void {
+  //   this.cartService.getCart().then(cart => this.cartItems = cart);
+  // }
 
   ngOnInit() {
-    this.getCart();
+    this.cartService.changes
+      .subscribe(data => {
+        this.cart = data;
+      })
   }
 
-  addToCart(name: string, price: number, id: number) {
-    id = this.cartId;
-    this.cartItems.push({name, price, id});
+  addToCart(name: string, price: number) {
+    this.cartService.addToCart({name:name, price:price, id:this.cartId});
+    // this.cartItems.push({name:name, price:price, id:id});
 
-    this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
     this.cartId++;
-  }
-
-  removeFromCart(id: number, price:number) {
-    if(this.totalPrice > 0){
-      this.totalPrice = Math.round((this.totalPrice - price)*100)/100;
-    }
-    this.cartItems = this.cartItems.filter(item => item.id !== id);
+    this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
   }
 }
