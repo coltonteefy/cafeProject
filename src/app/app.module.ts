@@ -12,6 +12,7 @@ import { FooterComponent } from './footer.component';
 import { DialogComponent } from './dialog.component';
 import { LunchMenuComponent } from './lunch-menu.component';
 import { CartPageComponent } from './cart-page.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -28,6 +29,7 @@ import { CartPageComponent } from './cart-page.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AlertModule.forRoot(),
     RouterModule.forRoot([
       {

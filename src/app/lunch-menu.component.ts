@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnInit, Renderer2} from '@angular/core';
 import { DialogComponent } from './dialog.component';
 import {CartService} from "./cart.service";
 import {Cart} from "./cart";
@@ -44,7 +44,9 @@ export class LunchMenuComponent implements OnInit {
     }
   ];
 
-  constructor(private cartService: CartService) {
+  constructor(private renderer2: Renderer2,
+              private el: ElementRef,
+              private cartService: CartService) {
   }
 
   // getCart(): void {
@@ -56,6 +58,15 @@ export class LunchMenuComponent implements OnInit {
       .subscribe(data => {
         this.cart = data;
       })
+  }
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    this.innerWidth = innerWidth;
+
+    if (pageYOffset > 600) {
+      this.renderer2.addClass(this.el.nativeElement.querySelector('#cartID'), 'cart-stick');
+    }else
+      this.renderer2.removeClass(this.el.nativeElement.querySelector('#cartID'), 'cart-stick');
   }
 
   addToCart(name: string, price: number) {

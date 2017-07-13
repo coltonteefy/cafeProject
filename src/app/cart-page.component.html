@@ -1,6 +1,7 @@
 <div class="container" id="body">
   <div class="checkout col-lg-12" id="cartID">
-    <h1 id="cart">Cart</h1>
+    <h1 id="cart">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></h1>
+    <h4 class="empty" *ngIf="empty">Cart is empty</h4>
     <!--<h5 class="total-price pull-right">Total: ${{totalPrice}}</h5>-->
     <ul class="cart-list">
       <li *ngFor="let item of cartItems" class="cart-items row">
@@ -15,10 +16,32 @@
   </div>
 
   <div class="total row">
-    <h2 class="col-12">Total: {{totalCost | currency:'USD':true:'1.0-2'}}</h2>
+    <h5 class="col-12">Sub Total: {{subTotal | currency:'USD':true:'1.0-2'}}</h5>
+    <h5 class="col-12">Tax: {{tax | currency:'USD':true:'1.0-2'}}</h5>
+    <!--<h2 class="col-12 total-cost">Total: {{total | currency:'USD':true:'1.0-2'}}-->
+    <h2 class="col-12 total-cost">Total: $
+      <form #form class="form-inline" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="mmusale93@gmail.com">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="item_name" value="Paypal demo charge">
+        <input name="item_number" type="hidden" value="0001"/>
+        <input type="text" disabled=true class="form-control" size="30"  name="amount" [(ngModel)]="payPal"/>
+        <input type="hidden" name="return" value="https://localhost:4200/"/>
+        <input type="hidden" name="cancel_return" value="https://localhost:4200/"/>
+        <input type="hidden" name="custom" value={{title}}>
+        <!--pass your notification URL-->
+        <input name="notify_url" value="YOUR NOTIFICATION URL" type="hidden">
+      </form>
+    </h2>
     <div class="col-12">
-      <button type="button" (click)="purchase()" class="purchase-btn col-6">Order</button>
+      <button type="button" (click)="form.submit()" src="https://www.paypal.com/en_US/i/btn/btn_buynow_LG.gif"
+              border="0"
+              name="submit" class="purchase-btn col-6">Order
+      </button>
     </div>
+
+
   </div>
 </div>
 

@@ -64,6 +64,6 @@ export class AppComponent implements OnInit{
         this.renderer2.removeClass(this.el.nativeElement.querySelector('#head'), 'header-change');
       }
     }
-    // console.log(pageYOffset);
+    console.log(pageYOffset);
    }
 }

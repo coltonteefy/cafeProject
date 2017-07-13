@@ -7,7 +7,7 @@ import {Observable} from "rxjs/Observable";
 
 //                        read for more info
 //  https://angularclass.com/blog/create-a-simple-reactive-store-for-angular-2/
-const _store = new BehaviorSubject({cart: [], total: 0});
+const _store = new BehaviorSubject({cart: [], total: 0, saleTax:0});
 
 @Injectable()
 export class CartService {

@@ -15,7 +15,7 @@
 
 #cart {
   font-family: 'Lobster', cursive;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.58);
 }
 
 ul {
@@ -77,3 +77,32 @@ ul {
   alignment: center;
 }
 
+.total-cost {
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+.empty {
+  text-align: center;
+  font-family: 'Ruluko', sans-serif;
+  padding-top: 35px;
+}
+
+.form-control {
+  border: transparent;
+  position: relative;
+  top: -33px;
+  left: 83px;
+  width: 50%;
+  font-size: 30px;
+  color: black;
+  background-color: transparent;
+}
+
+.form-control:hover {
+  cursor: default;
+}
+
+.fa.fa-shopping-cart{
+  font-size: 25px;
+}
