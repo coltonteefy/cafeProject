@@ -2,11 +2,14 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import "rxjs/add/observable/timer";
 import {Observable} from "rxjs/Observable";
+import {CartService} from "./cart.service";
+import {Cart} from "./cart";
 
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
+  providers: [CartService]
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
@@ -30,9 +33,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ];
   currentPic = this.foodPics[this.i];
 
+  cart: Cart;
+  cartItems: Cart[];
+  cartTotal = 0;
 
-
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
     // this.onWindowScroll();
@@ -41,6 +46,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.timer = Observable.timer(0,5000).subscribe(t => {
       this.changePic();
     })
+
+
+    this.cartService.changes
+      .subscribe((data: any) => {
+        this.cartItems = data.cart;
+        this.cartTotal = data.cart.length;
+      });
+
   }
 
   ngOnDestroy() {
@@ -49,7 +62,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   changePic(){
 
-    if(this.i >= 5){
+    console.log(this.foodPics.length);
+    if(this.i >= (this.foodPics.length - 1)){
       this.i = 0;
       this.currentPic = this.foodPics[this.i];
       // this.i = this.i + 1;

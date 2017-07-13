@@ -59,6 +59,7 @@ export class LunchMenuComponent implements OnInit {
         this.cart = data;
       })
   }
+
   @HostListener("window:scroll", [])
   onWindowScroll() {
     this.innerWidth = innerWidth;
