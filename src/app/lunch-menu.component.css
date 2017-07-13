@@ -105,13 +105,13 @@ ul {
 }
 
 .cart-stick {
-  top: -25px;
-  left: 609px;
+  top: -30px;
+  left: 629px;
   z-index: 100;
   position: fixed;
   overflow: auto;
-  max-height: 555px;
-  width: 558px;
+  max-height: 562px;
+  width: 580px;
 }
 ::-webkit-scrollbar {
   width: 0;

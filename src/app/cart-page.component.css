@@ -88,6 +88,11 @@ ul {
   padding-top: 35px;
 }
 
+.order-btn {
+  position: relative;
+  top: -40px;
+}
+
 .form-control {
   border: transparent;
   position: relative;
@@ -97,6 +102,7 @@ ul {
   font-size: 30px;
   color: black;
   background-color: transparent;
+  box-shadow: none;
 }
 
 .form-control:hover {

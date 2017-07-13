@@ -15,14 +15,18 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private LOGO = './assets/upsLogo.gif';
   i = 0;
   foodPics = [
-    //grill chesse and chicken
+    //grilled chicken and sandwich
     'http://www.cincinnatimagazine.com/wp-content/uploads/sites/20/2015/03/CM_MAR15_FEATURE_T10_ABI1-e1425438722184.jpg',
-    //table of everything
+    //waffles
     'http://thenewlywedscookbook.com/wp-content/uploads/2015/01/homemade-blueberry-sauce-3-1000x600.jpg',
     //sandwich pile
     'https://static1.squarespace.com/static/55d25e52e4b075ba97049c9c/55d2786fe4b0ac4433e4c8cd/560aa0cde4b020611706a74a/1443537105903/panini-stack-min.jpg',
     //sandwich and pasta
-    'http://cmzone.vzbqbxhynotw9ion96xv.netdna-cdn.com/wp-content/uploads/2016/09/back-to-biz-lunch-boxes-hero.jpg'
+    'http://cmzone.vzbqbxhynotw9ion96xv.netdna-cdn.com/wp-content/uploads/2016/09/back-to-biz-lunch-boxes-hero.jpg',
+    //above view chicken and strawberries
+    'https://eatapp.co/dubai-restaurantsimages/cubano-lito-ibis-one-central-trade-centre-area-restaurant-5.jpg?width=1000&height=600',
+    //pizza
+    'http://www.graziellasmenu.com/pizza1000x600.jpg'
   ];
   currentPic = this.foodPics[this.i];
 
@@ -44,13 +48,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   changePic(){
-    if(this.i >= 3){
-      this.i = -1;
+
+    if(this.i >= 5){
+      this.i = 0;
       this.currentPic = this.foodPics[this.i];
-      this.i = this.i + 1;
+      // this.i = this.i + 1;
+      console.log(this.i);
     }
     else
       this.i = this.i + 1;
       this.currentPic = this.foodPics[this.i];
+      console.log(this.i);
   }
 }
