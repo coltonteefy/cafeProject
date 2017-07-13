@@ -3,7 +3,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 1140px;
+  height: 1190px;
+  /*height: 1140px;*/
 }
 
 #nav {
@@ -11,8 +12,8 @@ header {
   width: 100%;
   box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
   z-index: 150;
-  /*padding-top: 450px;*/
-  padding-top: 495px;
+  padding-top: 520px;
+  /*padding-top: 495px;*/
 }
 
 #logo {
@@ -90,8 +91,9 @@ i {
 
 .upsEats {
   position: relative;
-  padding: 205px 1px 118px 0;
-  top: -590px;
+  padding: 205px 1px 145px 0;
+  /*padding: 205px 1px 118px 0;*/
+  top: -616px;
   /*top: -740px;*/
   color: #ffb500;
   background-color: rgba(53, 28, 21, 0.5);

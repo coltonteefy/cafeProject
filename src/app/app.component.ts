@@ -41,7 +41,7 @@ export class AppComponent implements OnInit{
       this.renderer2.removeClass(this.el.nativeElement.querySelector('#navList'), 'show');
     }
 
-    if(pageYOffset >= 495){
+    if(pageYOffset >= 520){
       this.renderer2.addClass(this.el.nativeElement.querySelector('#navList'), 'navbar-fixed');
       this.renderer2.addClass(this.el.nativeElement.querySelector('#body'), 'body-up');
       this.renderer2.addClass(this.el.nativeElement.querySelector('#head'), 'header-change');
