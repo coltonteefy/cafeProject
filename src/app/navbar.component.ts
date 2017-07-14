@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     'http://www.graziellasmenu.com/pizza1000x600.jpg'
   ];
   currentPic = this.foodPics[this.i];
-
   cart: Cart;
   cartItems: Cart[];
   cartTotal = 0;
@@ -40,12 +39,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    // this.onWindowScroll();
     this.changePic();
 
     this.timer = Observable.timer(0,5000).subscribe(t => {
       this.changePic();
-    })
+    });
 
 
     this.cartService.changes
@@ -61,17 +59,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   changePic(){
-
-    console.log(this.foodPics.length);
     if(this.i >= (this.foodPics.length - 1)){
       this.i = 0;
       this.currentPic = this.foodPics[this.i];
       // this.i = this.i + 1;
-      console.log(this.i);
     }
     else
       this.i = this.i + 1;
       this.currentPic = this.foodPics[this.i];
-      console.log(this.i);
   }
 }

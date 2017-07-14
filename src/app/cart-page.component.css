@@ -15,7 +15,7 @@
 
 #cart {
   font-family: 'Lobster', cursive;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.58);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.58);;
 }
 
 ul {
@@ -78,7 +78,7 @@ ul {
 }
 
 .total-cost {
-  border-top: 1px solid black;
+  border-top: 1px solid rgba(0, 0, 0, 0.58);
   padding-top: 10px;
 }
 

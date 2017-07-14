@@ -1,5 +1,6 @@
 <div class="container row" id="body">
   <div class="col-lg-6 col-md-6 col-sm-6 menu-list">
+
     <h1 class="menu-item">Burgers</h1>
     <ul>
       <li *ngFor="let item of burgerList" class="each-item row">
@@ -13,21 +14,34 @@
 
       </li>
     </ul>
+
     <h1 class="menu-item">Pizza</h1>
+    <ul>
+      <li *ngFor="let item of pizzaList" class="each-item row">
+        <img class="food-pic" src={{item.image}}>
+        <div class="food-description col-lg-8 col-sm-12">
+          <h3>{{item.name}}</h3>
+          <h5>{{item.description}}</h5>
+          <h5>${{item.price}}<i class="fa fa-plus-circle pull-right col-lg-2 col-sm-2"
+                                (click)="addToCart(item.name, item.price)" aria-hidden="true"></i></h5>
+        </div>
+
+      </li>
+    </ul>
   </div>
 
   <cart-page id="cartID" class="checkout-side-box cart col-lg-6 col-md-6 col-sm-6 hidden-xs-down"></cart-page>
 
   <!--<div class="checkout-side-box col-lg-4 col-md-4 col-sm-4 hidden-xs-down" id="cartID">-->
-    <!--<h1 id="cart">Cart</h1><h5 class="total-price pull-right">Total: ${{totalPrice}}</h5>-->
-    <!--<ul class="cart-list">-->
-      <!--<li *ngFor="let item of cart" class="cart-items row">-->
-        <!--<h4 class="pull-left col-lg-8 col-md-6">{{item.name}}</h4>-->
-        <!--<h5 class="pull-right col-lg-2 col-md-2">{{item.price}}</h5>-->
-        <!--<i (click)="removeFromCart(item.id, item.price)" class="fa fa-times col-lg-1 col-md-1" aria-hidden="true"></i>-->
-      <!--</li>-->
-      <!--<br>-->
-    <!--</ul>-->
+  <!--<h1 id="cart">Cart</h1><h5 class="total-price pull-right">Total: ${{totalPrice}}</h5>-->
+  <!--<ul class="cart-list">-->
+  <!--<li *ngFor="let item of cart" class="cart-items row">-->
+  <!--<h4 class="pull-left col-lg-8 col-md-6">{{item.name}}</h4>-->
+  <!--<h5 class="pull-right col-lg-2 col-md-2">{{item.price}}</h5>-->
+  <!--<i (click)="removeFromCart(item.id, item.price)" class="fa fa-times col-lg-1 col-md-1" aria-hidden="true"></i>-->
+  <!--</li>-->
+  <!--<br>-->
+  <!--</ul>-->
   <!--</div>-->
 
 </div>
@@ -35,6 +49,7 @@
 
 <!--<button (click)="showDialog = !showDialog" class="btn" style="background-color: white; position: relative">Open</button>-->
 
+<!--dialog example-->
 <!--<app-dialog [(visible)]="showDialog">-->
-  <!--<h1>Order Success <i class="fa fa-check-circle-o check" aria-hidden="true"></i></h1>-->
+<!--<h1>Order Success <i class="fa fa-check-circle-o check" aria-hidden="true"></i></h1>-->
 <!--</app-dialog>-->

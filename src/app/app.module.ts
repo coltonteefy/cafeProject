@@ -13,6 +13,9 @@ import { DialogComponent } from './dialog.component';
 import { LunchMenuComponent } from './lunch-menu.component';
 import { CartPageComponent } from './cart-page.component';
 import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import { BreakfastMenuComponent } from './breakfast-menu.component';
+import { DrinkMenuComponent } from './drink-menu.component';
 
 
 
@@ -24,12 +27,15 @@ import {FormsModule} from "@angular/forms";
     FooterComponent,
     DialogComponent,
     LunchMenuComponent,
-    CartPageComponent
+    CartPageComponent,
+    BreakfastMenuComponent,
+    DrinkMenuComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpModule,
     AlertModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -47,6 +53,14 @@ import {FormsModule} from "@angular/forms";
       {
         path: 'cart-page',
         component: CartPageComponent
+      },
+      {
+        path: 'breakfast-menu',
+        component: BreakfastMenuComponent
+      },
+      {
+        path: 'drink-menu',
+        component: DrinkMenuComponent
       },
       {
         path: '**',
