@@ -26,7 +26,7 @@
 
 #lunch {
   width: 100%;
-  /*background: url("http://az616578.vo.msecnd.net/files/2016/09/02/636084464543361523808066170_sandwich.jpg ") no-repeat;*/
+  /*background: url("http://az616578.vo.msecnd.net/files/2016/09/02/636084464543361523808066170_sandwich.jpg") no-repeat;*/
   /*background: url("http://assets3.thrillist.com/v1/image/1374202/size/tl-horizontal_main/the-best-cities-in-america-for-burgers-pizza-bbq-and-more") no-repeat;*/
   background: url("https://www.sandersonfarms.com/wp-content/uploads/2011/04/GrilledChickenSandwichWithPesto_810x660.jpg") no-repeat;
   /*background: url("http://cdn1.afamilyfeast.com/wp-content/uploads/2013/04/chicken_club_2_sandwich.jpg") no-repeat;*/
@@ -39,7 +39,8 @@
 
 #drinks {
   width: 100%;
-  background: url("http://acdn.newshunt.com/fetchdata11/20170408/witty/lifestyle/images/400x400_MIMAGEc944bb663c88c8f92af3b5f0da8806aa.jpg") no-repeat;
+  /*background: url("http://acdn.newshunt.com/fetchdata11/20170408/witty/lifestyle/images/400x400_MIMAGEc944bb663c88c8f92af3b5f0da8806aa.jpg") no-repeat;*/
+  background: url("http://www.gsmnation.com/blog/wp-content/uploads/2012/10/Pouring-a-Glass-of-Coke.jpg") no-repeat;
   background-size: cover;
 }
 
