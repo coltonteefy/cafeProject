@@ -3,20 +3,20 @@
   margin: 0 auto;
   position: relative;
   background: white;
-  padding: 110px 50px 110px 50px;
+  padding: 150px 50px 150px 50px;
   width:100%;
   height: auto;
 }
 
 .choice {
-  height: 300px;
+  height: 450px;
   color: white;
   border: 5px solid white;
 }
 
 #breakfast {
   width: 100%;
-  background: url("http://images.contentful.com/406ai0ux7ky0/0000000200008ad000000000/ea66000a28e60e81f1ad07917e347c55/vans_waffles.jpeg?fm=jpg&q=65&fl=progressive&fit=thumb&w=400&h=300") no-repeat;
+  background: url("https://www.bobevans.com/-/media/bobevans_com/images/our-restaurants/menu/breakfast/waffle-breakfast-with-bacon.jpg?h=333&la=en&w=500&hash=DAB668251C6F07DE002A4DB9199B609E349EF3C9") no-repeat;
   background-size: cover;
 }
 
@@ -26,7 +26,7 @@
 
 #lunch {
   width: 100%;
-  background: url("https://www.fb101.com/wp-content/uploads/2014/04/MeatloafSliders.jpg") no-repeat;
+  background: url("http://assets3.thrillist.com/v1/image/1374202/size/tl-horizontal_main/the-best-cities-in-america-for-burgers-pizza-bbq-and-more") no-repeat;
   background-size: cover;
 }
 
@@ -69,7 +69,7 @@
   /*background-color: rgba(0, 0, 0, 0.24);*/
   background-color: rgba(0, 0, 0, 0.32);
   position: relative;
-  top: 210px;
+  top: 350px;
   padding: 1px 23px 5px 30px;
   margin: 0 auto;
 }
