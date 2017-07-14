@@ -2,11 +2,38 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Cart} from './cart'
 import {CartService} from "./cart.service";
 import 'rxjs/add/operator/pluck';
+import {state, trigger, style, animate, transition, keyframes} from "@angular/animations";
 
 @Component({
   selector: 'cart-page',
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({transform: 'translateX(0)'})),
+      transition('void => *', [
+        animate(500, keyframes([
+          style({opacity: 0, transform: 'translateX(-100%)', offset: 0}),
+          style({opacity: 1, transform: 'translateX(15px)',  offset: 0.3}),
+          style({opacity: 1, transform: 'translateX(0)',     offset: 1.0})
+        ]))
+      ]),
+      transition('* => void', [
+        animate(500, keyframes([
+          style({opacity: 1, transform: 'translateX(0)',     offset: 0}),
+          style({opacity: 1, transform: 'translateX(-15px)', offset: 0.7}),
+          style({opacity: 0, transform: 'translateX(100%)',  offset: 1.0})
+        ]))
+      ])
+    ]),
+    trigger('shrinkOut', [
+      state('in', style({height: '*'})),
+      transition('* => void', [
+        style({height: '*'}),
+        animate(100, style({height: 0}))
+      ])
+    ])
+  ],
   providers: [CartService]
 })
 export class CartPageComponent implements OnInit {
@@ -17,6 +44,8 @@ export class CartPageComponent implements OnInit {
   total: number;
   payPal: number;
   empty: boolean;
+  cartAnimate = 'out';
+  emptyCartTxt = 'in';
 
 
   constructor(private cartService: CartService) {
@@ -37,9 +66,14 @@ export class CartPageComponent implements OnInit {
   isEmpty(cart: any) {
     if (cart.length > 0) {
       this.empty = false;
+      this.cartAnimate = 'in';
+      this.emptyCartTxt = 'out';
     }
-    else
+    else {
       this.empty = true;
+      this.cartAnimate = 'out';
+      this.emptyCartTxt = 'in';
+    }
   }
 
   purchase() {
