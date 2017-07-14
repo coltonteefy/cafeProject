@@ -19,18 +19,21 @@ import {state, trigger, style, animate, transition, keyframes} from "@angular/an
         ]))
       ]),
       transition('* => void', [
-        animate(500, keyframes([
+        animate(300, keyframes([
           style({opacity: 1, transform: 'translateX(0)',     offset: 0}),
           style({opacity: 1, transform: 'translateX(-15px)', offset: 0.7}),
           style({opacity: 0, transform: 'translateX(100%)',  offset: 1.0})
         ]))
       ])
     ]),
-    trigger('shrinkOut', [
-      state('in', style({height: '*'})),
+    trigger('slideInOut', [
+      state('in', style({transform: 'translateX(0)'})),
+      transition('void => *', [
+        style({transform: 'translateX(-100%)'}),
+        animate(375)
+      ]),
       transition('* => void', [
-        style({height: '*'}),
-        animate(100, style({height: 0}))
+        animate(200, style({transform: 'translateX(100%)'}))
       ])
     ])
   ],

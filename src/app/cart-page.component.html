@@ -1,7 +1,7 @@
 <div class="container" id="body">
   <div class="checkout col-lg-12" id="cartID">
     <h1 id="cart">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></h1>
-    <h4 class="empty" *ngIf="empty" [@shrinkOut]="cartEmptyTxt">Cart is empty</h4>
+    <h4 class="empty" *ngIf="empty" [@slideInOut]="cartEmptyTxt">Cart is empty</h4>
     <!--<h5 class="total-price pull-right">Total: ${{totalPrice}}</h5>-->
     <ul class="cart-list">
       <li [@flyInOut]="cartAnimate" *ngFor="let item of cartItems" class="cart-items row">
@@ -15,7 +15,7 @@
     </ul>
   </div>
 
-  <div class="total row">
+  <div *ngIf="!empty" class="total row" [@flyInOut]="cartEmptyTxt">
     <h5 class="col-12">Sub Total: {{subTotal | currency:'USD':true:'1.0-2'}}</h5>
     <h5 class="col-12">Tax: {{tax | currency:'USD':true:'1.0-2'}}</h5>
     <!--<h2 class="col-12 total-cost">Total: {{total | currency:'USD':true:'1.0-2'}}-->
