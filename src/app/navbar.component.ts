@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 
 import 'rxjs/add/observable/timer';
 import {Observable} from 'rxjs/Observable';
@@ -41,6 +41,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.onResize();
     this.changePic();
 
     this.timer = Observable.timer(0, 5000).subscribe(t => {
@@ -60,6 +61,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.timer.unsubscribe();
   }
 
+  @HostListener('window:resize', [])
+  onResize() {
+    if (window.innerWidth > 574) {
+      this.closeNav();
+    }
+  }
+
   changePic() {
     if (this.i >= (this.foodPics.length - 1)) {
       this.i = 0;
@@ -72,10 +80,20 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   scrollWin() {
-    if (innerWidth > 800) {
+    if (innerWidth > 400) {
       window.scrollTo(0, 525);
     } else {
-      window.scrollTo(0);
+      window.scrollTo(0, 0);
     }
+  }
+
+  openNav() {
+    document.getElementById('mySidenav').style.width = '250px';
+    document.getElementById('mySidenav').style.visibility = 'visible';
+  }
+
+  closeNav() {
+    document.getElementById('mySidenav').style.width = '0';
+    document.getElementById('mySidenav').style.visibility = 'none';
   }
 }

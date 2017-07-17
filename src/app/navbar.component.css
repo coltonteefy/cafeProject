@@ -144,7 +144,7 @@ i {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 574px) {
   header {
     opacity: 0;
   }
@@ -185,4 +185,49 @@ iframe {
   font-size: 12px;
   color: black;
   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#drop-menu {
+  position: relative;
+  left: 65%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 75px;
+  left: 0;
+  background-color: rgb(54, 33, 33);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+  color: #ffb500;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.side-nav-choice{
+  position: relative;
+  left: 50px;
+  top: -35px;
 }

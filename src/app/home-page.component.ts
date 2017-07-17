@@ -16,10 +16,10 @@ export class HomePageComponent implements OnInit {
   }
 
   scrollWin() {
-    if (innerWidth > 800) {
+    if (innerWidth > 400) {
       window.scrollTo(0, 525);
     } else {
-      window.scrollTo(0);
+      window.scrollTo(0, 0);
     }
   }
 }

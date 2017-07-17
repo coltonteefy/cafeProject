@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Cart} from './cart'
-import {CartService} from "./cart.service";
+import {CartService} from './cart.service';
 import 'rxjs/add/operator/pluck';
-import {state, trigger, style, animate, transition, keyframes} from "@angular/animations";
+import {state, trigger, style, animate, transition, keyframes} from '@angular/animations';
 
 @Component({
   selector: 'cart-page',
