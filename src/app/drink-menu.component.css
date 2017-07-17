@@ -103,6 +103,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 570px) {
+  .menu-list {
+    border-right:none;
+  }
+}
+
 .fa-times {
   position: relative;
   top: 10px;

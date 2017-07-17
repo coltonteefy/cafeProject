@@ -123,3 +123,9 @@ ul {
   background: transparent;
 }
 
+@media screen and (max-width: 570px) {
+  .menu-list {
+    border-right:none;
+  }
+}
+

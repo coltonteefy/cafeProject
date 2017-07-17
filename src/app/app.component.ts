@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, Renderer2} from '@angular/core';
-import {Cart} from "./cart";
+import {Cart} from './cart';
 import {CartService} from './cart.service';
 
 @Component({
@@ -8,7 +8,7 @@ import {CartService} from './cart.service';
   styleUrls: ['./app.component.css'],
   providers: [CartService]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   cart: Cart[];
 
   title = 'app';
@@ -16,54 +16,54 @@ export class AppComponent implements OnInit{
 
   constructor(private renderer2: Renderer2,
               private el: ElementRef,
-              private cartService: CartService) { }
+              private cartService: CartService) {
+  }
 
 
   getCart(): void {
-    this.cartService.getCart().then(cart => {});
+    this.cartService.getCart().then(cart => {
+    });
   }
+
   ngOnInit() {
-    //this.getCart();
     this.cartService.changes
       .subscribe(data => {
         this.cart = data;
       })
   }
 
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   onWindowScroll() {
     this.innerWidth = innerWidth;
 
-    if(pageYOffset > 20) {
+    if (pageYOffset > 20) {
       this.renderer2.addClass(this.el.nativeElement.querySelector('#navList'), 'show');
-    }
-    else {
+    } else {
       this.renderer2.removeClass(this.el.nativeElement.querySelector('#navList'), 'show');
     }
 
-    if(pageYOffset >= 520){
+    if (pageYOffset >= 520) {
       this.renderer2.addClass(this.el.nativeElement.querySelector('#navList'), 'navbar-fixed');
       this.renderer2.addClass(this.el.nativeElement.querySelector('#body'), 'body-up');
       this.renderer2.addClass(this.el.nativeElement.querySelector('#head'), 'header-change');
-    }
-    else{
+    } else {
       this.renderer2.removeClass(this.el.nativeElement.querySelector('#navList'), 'navbar-fixed');
       this.renderer2.removeClass(this.el.nativeElement.querySelector('#body'), 'body-up');
       this.renderer2.removeClass(this.el.nativeElement.querySelector('#head'), 'header-change');
     }
 
-    if(this.innerWidth < 800 && this.innerWidth > 400){
-      if(pageYOffset >= 221){
+    if (this.innerWidth < 800 && this.innerWidth > 400) {
+      if (pageYOffset >= 221) {
         this.renderer2.addClass(this.el.nativeElement.querySelector('#navList'), 'navbar-fixed');
         this.renderer2.addClass(this.el.nativeElement.querySelector('#body'), 'body-up');
         this.renderer2.addClass(this.el.nativeElement.querySelector('#head'), 'header-change');
-      }
-      else{
+      } else {
         this.renderer2.removeClass(this.el.nativeElement.querySelector('#navList'), 'navbar-fixed');
         this.renderer2.removeClass(this.el.nativeElement.querySelector('#body'), 'body-up');
         this.renderer2.removeClass(this.el.nativeElement.querySelector('#head'), 'header-change');
       }
     }
-    // console.log(pageYOffset);
-   }
+    console.log(pageYOffset + 'page y');
+    console.log(innerWidth + 'page x');
+  }
 }

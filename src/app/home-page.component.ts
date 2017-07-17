@@ -15,4 +15,11 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  scrollWin() {
+    if (innerWidth > 800) {
+      window.scrollTo(0, 525);
+    } else {
+      window.scrollTo(0);
+    }
+  }
 }

@@ -5,6 +5,14 @@
   padding: 110px 50px 110px 50px;
 }
 
+.empty-cart-container {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 110px 50px 110px 50px;
+  height: 600px;
+}
+
 .checkout {
 }
 
@@ -15,7 +23,7 @@
 
 #cart {
   font-family: 'Lobster', cursive;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.58);;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.58);
 }
 
 ul {
@@ -111,4 +119,10 @@ ul {
 
 .fa.fa-shopping-cart{
   font-size: 25px;
+}
+
+@media screen and (max-width: 570px) {
+  .menu-list {
+    border-right:none;
+  }
 }
