@@ -147,6 +147,7 @@ i {
 @media screen and (max-width: 574px) {
   header {
     opacity: 0;
+    display: none;
   }
 
   .upsEats {
@@ -199,7 +200,7 @@ iframe {
   z-index: 1;
   top: 75px;
   left: 0;
-  background-color: rgb(54, 33, 33);
+  background-color: rgba(54, 33, 33, 0.95);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;

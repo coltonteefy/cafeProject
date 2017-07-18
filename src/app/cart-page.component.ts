@@ -71,8 +71,7 @@ export class CartPageComponent implements OnInit {
       this.empty = false;
       this.cartAnimate = 'in';
       this.emptyCartTxt = 'out';
-    }
-    else {
+    } else {
       this.empty = true;
       this.cartAnimate = 'out';
       this.emptyCartTxt = 'in';

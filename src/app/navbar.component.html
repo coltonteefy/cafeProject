@@ -29,8 +29,8 @@
       </a>
     </li>
     <li>
-      <a class="pages hidden-xs-down">
-        <i (click)="scrollWin()" class="fa fa-user-o" aria-hidden="true"></i>
+      <a class="pages hidden-xs-down" (click)="showDialog = !showDialog">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
       </a>
     </li>
     <li>
@@ -63,8 +63,8 @@
     <i (click)="scrollWin()" class="fa fa-coffee" aria-hidden="true"></i>
     <h4 class="side-nav-choice">Drinks</h4>
   </a>
-  <a class="pages">
-    <i (click)="scrollWin()" class="fa fa-user-o" aria-hidden="true"></i>
+  <a class="pages" (click)="showDialog = !showDialog">
+    <i class="fa fa-user-o" aria-hidden="true"></i>
     <h4 class="side-nav-choice">Login</h4>
   </a>
   <a class="pages" routerLink="cart-page">
@@ -74,3 +74,7 @@
     <h4 class="side-nav-choice">Cart</h4>
   </a>
 </div>
+
+<!--<button (click)="showDialog = !showDialog" class="btn" style="background-color: red; position: relative">test</button>-->
+
+<app-dialog [(visible)]="showDialog"></app-dialog>

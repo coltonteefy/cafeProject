@@ -12,10 +12,12 @@ import { FooterComponent } from './footer.component';
 import { DialogComponent } from './dialog.component';
 import { LunchMenuComponent } from './lunch-menu.component';
 import { CartPageComponent } from './cart-page.component';
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 import { BreakfastMenuComponent } from './breakfast-menu.component';
 import { DrinkMenuComponent } from './drink-menu.component';
+import { UserService } from "./services/user.service";
+import {UserRegistrationComponent} from "./user-registration-login.component";
 
 
 
@@ -29,7 +31,8 @@ import { DrinkMenuComponent } from './drink-menu.component';
     LunchMenuComponent,
     CartPageComponent,
     BreakfastMenuComponent,
-    DrinkMenuComponent
+    DrinkMenuComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -63,13 +66,17 @@ import { DrinkMenuComponent } from './drink-menu.component';
         component: DrinkMenuComponent
       },
       {
+        path: 'user-registration',
+        component: UserRegistrationComponent
+      },
+      {
         path: '**',
         redirectTo: '',
         pathMatch: 'prefix'
       }
     ]),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

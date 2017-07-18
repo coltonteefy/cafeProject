@@ -1,6 +1,7 @@
 import {Component, ElementRef, HostListener, OnInit, Renderer2} from '@angular/core';
 import {Cart} from './cart';
 import {CartService} from './cart.service';
+import {UserService} from "./services/user.service";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
 
   constructor(private renderer2: Renderer2,
               private el: ElementRef,
-              private cartService: CartService) {
+              private cartService: CartService, private userService: UserService) {
   }
 
 
@@ -30,6 +31,11 @@ export class AppComponent implements OnInit {
       .subscribe(data => {
         this.cart = data;
       })
+
+    // this.userService.createUser()
+    //   .subscribe(data => {
+    //     debugger;
+    //   })
   }
 
   @HostListener('window:scroll', [])
@@ -56,11 +62,11 @@ export class AppComponent implements OnInit {
       if (pageYOffset >= 221) {
         this.renderer2.addClass(this.el.nativeElement.querySelector('#navList'), 'navbar-fixed');
         this.renderer2.addClass(this.el.nativeElement.querySelector('#body'), 'body-up');
-        this.renderer2.addClass(this.el.nativeElement.querySelector('#head'), 'header-change');
+        // this.renderer2.addClass(this.el.nativeElement.querySelector('#head'), 'header-change');
       } else {
         this.renderer2.removeClass(this.el.nativeElement.querySelector('#navList'), 'navbar-fixed');
         this.renderer2.removeClass(this.el.nativeElement.querySelector('#body'), 'body-up');
-        this.renderer2.removeClass(this.el.nativeElement.querySelector('#head'), 'header-change');
+        // this.renderer2.removeClass(this.el.nativeElement.querySelector('#head'), 'header-change');
       }
     }
     console.log(pageYOffset);

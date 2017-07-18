@@ -4,12 +4,13 @@ import 'rxjs/add/observable/timer';
 import {Observable} from 'rxjs/Observable';
 import {CartService} from './cart.service';
 import {Cart} from './cart';
+import {DialogComponent} from "./dialog.component";
 
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  providers: [CartService]
+  providers: [CartService, DialogComponent]
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 

@@ -42,19 +42,19 @@ export class BreakfastMenuComponent implements OnInit {
       })
   }
 
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   onWindowScroll() {
     this.innerWidth = innerWidth;
 
     if (pageYOffset > 625) {
       this.renderer2.addClass(this.el.nativeElement.querySelector('#cartID'), 'cart-stick');
-    }else {
+    } else {
       this.renderer2.removeClass(this.el.nativeElement.querySelector('#cartID'), 'cart-stick');
     }
   }
 
   addToCart(name: string, price: number) {
-    this.cartService.addToCart({name:name, price:price, id:this.cartId});
+    this.cartService.addToCart({name: name, price: price, id: this.cartId});
     this.cartId++;
   }
 }
