@@ -1,0 +1,128 @@
+.container {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 110px 50px 110px 50px;
+}
+
+.empty-cart-container {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 110px 50px 110px 50px;
+  height: 600px;
+}
+
+.checkout {
+}
+
+.body-up {
+  position: relative;
+  top: 75px;
+}
+
+#cart {
+  font-family: 'Lobster', cursive;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.58);
+}
+
+ul {
+  list-style: none;
+}
+
+.each-item {
+  color: black;
+  display: flex;
+  padding: 14px 0 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+.cart-list {
+  position: relative;
+  width: 100%;
+}
+
+.cart-items {
+  position: relative;
+  margin: 0 auto;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.total-price {
+  position: relative;
+  bottom: 45px;
+}
+
+.fa-times {
+  position: relative;
+  top: -25px;
+}
+
+.total {
+  color: black;
+  background-color: white;
+  font-family: 'Ruluko', sans-serif;
+  width: 100%;
+  position: relative;
+  bottom: -65px;
+  padding: 40px 0 64px 0;
+}
+
+.purchase-btn {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background-color: #fcb004;
+  border-radius: 2px;
+  border: 1px solid #fcb004;
+  font-size: 17px;
+  width: 105px;
+  height: 40px;
+  position: relative;
+  color: white;
+  font-family: 'Advent Pro', sans-serif;
+  alignment: center;
+}
+
+.total-cost {
+  border-top: 1px solid rgba(0, 0, 0, 0.58);
+  padding-top: 10px;
+}
+
+.empty {
+  text-align: center;
+  font-family: 'Ruluko', sans-serif;
+  padding-top: 35px;
+}
+
+.order-btn {
+  position: relative;
+  top: -40px;
+}
+
+.form-control {
+  border: transparent;
+  position: relative;
+  top: -33px;
+  left: 83px;
+  width: 50%;
+  font-size: 30px;
+  color: black;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.form-control:hover {
+  cursor: default;
+}
+
+.fa.fa-shopping-cart{
+  font-size: 25px;
+}
+
+@media screen and (max-width: 570px) {
+  .menu-list {
+    border-right:none;
+  }
+}

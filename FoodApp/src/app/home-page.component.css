@@ -1,0 +1,162 @@
+.container {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  background: white;
+  padding: 150px 50px 150px 50px;
+  width:100%;
+  height: auto;
+}
+
+.choice {
+  height: 450px;
+  color: white;
+  border: 5px solid white;
+}
+
+@media screen and (max-width: 296px) {
+  .choice{
+    min-width: 275px;
+    position: relative;
+    left: -45px;
+  }
+}
+
+#breakfast {
+  width: 100%;
+  background: url("https://www.bobevans.com/-/media/bobevans_com/images/our-restaurants/menu/breakfast/waffle-breakfast-with-bacon.jpg?h=333&la=en&w=500&hash=DAB668251C6F07DE002A4DB9199B609E349EF3C9") no-repeat;
+  background-size: cover;
+}
+
+#breakfast:hover {
+  transform: scale(1.02);
+}
+
+#lunch {
+  width: 100%;
+  /*background: url("http://az616578.vo.msecnd.net/files/2016/09/02/636084464543361523808066170_sandwich.jpg") no-repeat;*/
+  /*background: url("http://assets3.thrillist.com/v1/image/1374202/size/tl-horizontal_main/the-best-cities-in-america-for-burgers-pizza-bbq-and-more") no-repeat;*/
+  background: url("https://www.sandersonfarms.com/wp-content/uploads/2011/04/GrilledChickenSandwichWithPesto_810x660.jpg") no-repeat;
+  /*background: url("http://cdn1.afamilyfeast.com/wp-content/uploads/2013/04/chicken_club_2_sandwich.jpg") no-repeat;*/
+  background-size: cover;
+}
+
+#lunch:hover {
+  transform: scale(1.02);
+}
+
+#drinks {
+  width: 100%;
+  /*pouring a soda*/
+  /*background: url("http://acdn.newshunt.com/fetchdata11/20170408/witty/lifestyle/images/400x400_MIMAGEc944bb663c88c8f92af3b5f0da8806aa.jpg") no-repeat;*/
+  background: url("http://www.customsodalabels.com/media/wysiwyg/4_Steps_to_Creating_Your_Own_Private_Label_Soda.jpg") no-repeat;
+  background-size: cover;
+}
+
+#drinks:hover {
+  transform: scale(1.02);
+}
+
+.choiceBtn {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background-color: #fcb004;
+  border-radius: 2px;
+  border: 1px solid #fcb004;
+  font-size: 17px;
+  width: 105px;
+  height: 40px;
+  position: relative;
+  color: white;
+  font-family: 'Advent Pro', sans-serif;
+  alignment: center;
+  /*top: 175px;*/
+}
+
+.choiceBtn:hover {
+  background-color: white;
+  color: #fcb004;
+}
+
+.description {
+  /*text-align: center;*/
+  /*background-color: rgba(0, 0, 0, 0.24);*/
+  background-color: rgba(0, 0, 0, 0.32);
+  position: relative;
+  top: 350px;
+  padding: 1px 23px 5px 30px;
+  margin: 0 auto;
+}
+
+/*#start {*/
+  /*text-align: center;*/
+  /*font-family: 'Advent Pro', sans-serif;*/
+  /*!*font-family: 'Ubuntu', sans-serif;  font-size: 50px;*!*/
+  /*font-size: 65px;*/
+  /*position: relative;*/
+  /*top: -50px;*/
+/*}*/
+
+.transition {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.main {
+  background: #f2f2e8;
+  padding: 30px 50px 50px;
+  column-count: 2;
+  column-gap: 40px;
+  position: relative;
+  margin-top: 75px;
+}
+
+.body-up {
+  position: relative;
+  top: 75px;
+}
+
+.menus {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  /*padding: 80px 0 65px 0;*/
+  text-align: center;
+  font-family: 'Ruluko', sans-serif;
+  /*background: #f1f1f1 url("http://static1.squarespace.com/static/556ddd04e4b0975c0bb32168/556ddecfe4b0be322ef6b552/592d2dc85016e1bf41af32ff/1497951365818/Jackfruit-caesar-salad-7-banner.jpg?format=1000w") no-repeat;*/
+  /*background-size: 1263px 415px;*/
+}
+.menu-img {
+  -webkit-filter: brightness(.5);
+  filter: brightness(.8);
+  position: relative;
+}
+
+#menu-words {
+  position: relative;
+  top: -58px;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+
+.check {
+  color: green;
+  position: relative;
+  left:12px;
+}
+
+@media screen and (max-width: 300px) {
+ #menu-img {
+   height:200px;
+ }
+}
+
+.pic-icon{
+  font-size: 15px;
+  position: relative;
+  top: -4px;
+
+}
+

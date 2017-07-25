@@ -1,0 +1,27 @@
+<div class="container" id="body">
+  <h2>Orders</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Order</th>
+        <th>Delete order</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <tr *ngFor="let item of kitchenItems">
+        <td>{{item.id}}</td>
+        <td>Anna</td>
+        <td>Pitt</td>
+        <td>{{item.name}}</td>
+        <td><button type="button" class="delete-btn" (click)="delete(item.id)">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,267 @@
+/*header {*/
+  /*!*height:900px;*!*/
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*width: 100%;*/
+  /*height: 1190px;*/
+  /*!*height: 1140px;*!*/
+/*}*/
+
+#nav {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+  z-index: 150;
+  /*padding-top: 520px;*/
+  padding-top: 680px;
+}
+
+#logo {
+  /*position: relative;*/
+  /*top: 5%;*/
+  /*left: 1%;*/
+  /*width: auto;*/
+  height: 60px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*background-color: #351c15;*/
+  height: 75px;
+}
+
+li {
+  float: left;
+  position: relative;
+  left: 8%;
+  margin: 0;
+  width: 15%;
+  height: auto;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*li:last-child {*/
+  /*border-right: none;*/
+/*}*/
+
+li a {
+  display: block;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  padding: 14px 16px 0 3px;
+  text-decoration: none;
+  font-size: 25px;
+  height: 2vh;
+}
+
+i {
+  display: inline-block;
+  padding: 5px 5px 0 5px;
+}
+
+.pages:hover:not(.active) {
+  color: #ffb500;
+  cursor: pointer;
+}
+
+.active {
+  color: #ffb500;
+}
+
+.pages {
+  position: relative;
+  width: 0;
+}
+
+.logo {
+  position: relative;
+  left:0;
+}
+
+
+#headerImg {
+  width: 100%;
+  height: 50%;
+}
+
+.upsEats {
+  position: relative;
+  padding: 205px 1px 145px 0;
+  /*padding: 205px 1px 118px 0;*/
+  top: -616px;
+  /*top: -740px;*/
+  color: #ffb500;
+  background-color: rgba(53, 28, 21, 0.5);
+  text-align: center;
+  font-family: 'Ruluko', sans-serif;
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.navbar-fixed {
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+
+.show {
+  background-color: rgba(49, 22, 22, 0.85);
+  /*opacity: 0.4;*/
+}
+
+.transition {
+  -webkit-transition: all .7s ease-in-out;
+  -moz-transition: all .7s ease-in-out;
+  -o-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out;
+}
+
+.header-change {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/*@media screen and (max-width: 1920px) {*/
+  /*#nav {*/
+    /*padding-top: 865px;*/
+  /*}*/
+/*}*/
+
+@media screen and (max-width: 1280px) {
+  #nav {
+    padding-top: 518px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #nav {
+    padding-top: 385px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    height: 600px;
+  }
+
+  .upsEats {
+    font-size: 45px;
+    top: -320px;
+    padding: 55px 0 96px 0;
+  }
+
+  #nav {
+    padding-top: 222px;
+  }
+}
+
+@media screen and (max-width: 574px) {
+  header {
+    opacity: 0;
+    display: none;
+  }
+
+  .upsEats {
+    font-size: 25px;
+    top: -170px;
+    padding: 30px 0 38px 0;
+  }
+
+  #nav {
+    padding-top: 0;
+    position: fixed;
+    background-color: #351C15;
+    /*background-color: rgba(49, 22, 22, 0.85);*/
+  }
+  .show {
+    background-color: #351C15;
+  }
+
+  i {
+    padding: 6px 8px 6px 8px;
+    /*border: 1px solid white;*/
+    /*border-radius: 10px;*/
+  }
+
+  i:hover {
+    border-color: #ffb500;
+  }
+}
+
+iframe {
+  background-size: cover;
+  width: 100%;
+  height: 715px;
+}
+
+.cart-total {
+  position: relative;
+  top: -30.5px;
+  left: 2px;
+  font-size: 12px;
+  color: black;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+@media screen and (max-width: 570px) {
+  .cart-total {
+    top: -31px;
+    left: 10px;
+  }
+
+  #side-nav-cart-text {
+    top: -68px;
+  }
+}
+
+#drop-menu {
+  position: relative;
+  left: 65%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 75px;
+  left: 0;
+  background-color: rgba(54, 33, 33, 0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+  color: #ffb500;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.side-nav-choice{
+  position: relative;
+  left: 50px;
+  top: -35px;
+}

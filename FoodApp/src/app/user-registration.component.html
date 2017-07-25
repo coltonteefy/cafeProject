@@ -1,0 +1,58 @@
+<div class="success-alert" *ngIf="allPass">
+  <h3 class="success-body"><strong>Success!</strong> Let's log in now</h3>
+</div>
+
+<div class="btn-group" data-toggle="buttons">
+  <label id="logBtn" class="btn btn-primary active" (click)="switchToLogin()">
+    <input type="radio" name="options" id="option1" autocomplete="off"> Login
+  </label>
+  <label id="registerBtn" class="btn btn-primary" (click)="switchToRegister()">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Register
+  </label>
+</div>
+
+<div *ngIf="registerScreen">
+  <h3>Let's sign you up!</h3>
+  <h5 *ngIf="emptyFilled" [@shrinkOut]="animateFieldAlert"><strong>Oops!</strong> You missed a field silly</h5>
+  <h5 *ngIf="emailText" [@shrinkOut]="animateEmailAlert">Please use a valid email</h5>
+  <div class="register-container">
+    <div class="wrap">
+      <form action="#" method="post">
+        <input class="inputs" name="first-name" type="text" required="" placeholder="First name" [(ngModel)]="registerForm.first_name">
+        <input class="inputs" name="last-name" type="text" required="" placeholder="Last name" [(ngModel)]="registerForm.last_name">
+        <input class="inputs" name="E-mail" type="text" required="" placeholder="E-mail" [(ngModel)]="registerForm.email">
+        <input class="inputs" name="username" type="text" required="" placeholder="Username" [(ngModel)]="registerForm.username">
+        <input class="inputs" name="password" type="password" required="" placeholder="Password" [(ngModel)]="registerForm.password">
+        <input class="submit-clr-btn" type="submit" value="submit" (click)="submitRegistrationClick()" data-toggle="modal" data-target="#myModal">
+        <input class="submit-clr-btn" type="reset" value="reset">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="loginScreen">
+  <h3>Welcome back</h3>
+  <div class="register-container">
+    <div class="wrap">
+      <form action="#" method="post">
+        <input class="inputs" name="username" type="text" required="" placeholder="Username">
+        <input class="inputs" name="password" type="password" required="" placeholder="Password" >
+        <div class="agile-submit">
+          <input class="submit-clr-btn" type="submit" value="Sign in" (click)="userLogin()">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--<input class="submit-clr-btn" type="submit" value="submit" (click)="submitClick()" data-toggle="modal" data-target="#myModal">-->
+<!--<div *ngIf="allPass" class="modal fade" id="myModal" role="dialog">-->
+  <!--<div class="modal-dialog modal-sm">-->
+    <!--<div class="modal-content">-->
+      <!--<div class="modal-body">-->
+        <!--<p><strong>Success!</strong> Let's log in now</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
