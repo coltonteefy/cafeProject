@@ -5,7 +5,7 @@ import {KITCHEN} from "./mock-kitchen-items";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 import {Observable} from "rxjs/Observable";
 
-const _store = new BehaviorSubject({kitchen: [], total: 0, saleTax: 0});
+const _store = new BehaviorSubject({kitchen: [{}], total: 0, saleTax: 0});
 
 @Injectable()
 export class KitchenService {

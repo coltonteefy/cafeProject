@@ -1,28 +1,41 @@
 .footer {
   position: relative;
   text-align: center;
-  /*margin-top: 50px;*/
-  background-color: #351C15;
+  background-color: rgb(193, 4, 4);
   color: white;
   font-family: 'Advent Pro', sans-serif;
-  height: 75px;
+  height: 100%;
+  padding: 10px;
 }
 
-
-@media screen and (max-width: 990px) {
-  .footer {
-    height: 115px;
-  }
-}
+/*@media screen and (max-width: 990px) {*/
+  /*.footer {*/
+    /*height: 115px;*/
+  /*}*/
+/*}*/
 
 .payment {
   font-size: 25px;
 }
 
-.social-media{
+.social-media {
+  font-size: 35px;
+}
+
+.payment i:hover {
   font-size: 30px;
+  color: #ffb500;
+}
+
+.social-media i:hover {
+  font-size: 40px;
+  color: #ffb500;
 }
 
 a {
   color: white;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
 }

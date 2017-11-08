@@ -10,17 +10,19 @@ import { RouterModule } from "@angular/router";
 
 import { FooterComponent } from './footer.component';
 import { DialogComponent } from './dialog.component';
-import { LunchMenuComponent } from './lunch-menu.component';
 import { CartPageComponent } from './cart-page.component';
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
-import { BreakfastMenuComponent } from './breakfast-menu.component';
 import { DrinkMenuComponent } from './drink-menu.component';
 import { UserService } from "./services/user.service";
 import { UserRegistrationComponent } from "./user-registration-login.component";
 import { KitchenSideViewComponent } from './kitchen-side-view.component';
 import {ValidateService} from "./services/validate.service";
 import { HeaderComponent } from './header.component';
+import { SaladsComponent } from './salads.component';
+import { SidesComponent } from './sides.component';
+import { PizzaComponent } from './pizza.component';
+import { ModalPizzaComponent } from './modal-pizza.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { HeaderComponent } from './header.component';
     NavbarComponent,
     FooterComponent,
     DialogComponent,
-    LunchMenuComponent,
     CartPageComponent,
-    BreakfastMenuComponent,
     DrinkMenuComponent,
     UserRegistrationComponent,
     KitchenSideViewComponent,
-    HeaderComponent
+    HeaderComponent,
+    SaladsComponent,
+    SidesComponent,
+    PizzaComponent,
+    ModalPizzaComponent
   ],
   imports: [
     BrowserModule,
@@ -53,20 +57,24 @@ import { HeaderComponent } from './header.component';
         component: NavbarComponent
       },
       {
-        path: 'lunch-menu',
-        component: LunchMenuComponent
-      },
-      {
         path: 'cart-page',
         component: CartPageComponent
       },
       {
-        path: 'breakfast-menu',
-        component: BreakfastMenuComponent
+        path: 'salads',
+        component: SaladsComponent
       },
       {
         path: 'drink-menu',
         component: DrinkMenuComponent
+      },
+      {
+        path: 'sides',
+        component: SidesComponent
+      },
+      {
+        path: 'pizza',
+        component: PizzaComponent
       },
       {
         path: 'user-registration',

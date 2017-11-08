@@ -112,12 +112,18 @@ export class UserRegistrationComponent implements OnInit {
   //   document.getElementById("option1").checked = true;
   // }
 
-  // userLogin() {
-  //   console.log('login');
-  //   console.log(this.registerForm.username);
-  //   console.log(this.userService.getUser(this.registerForm.username));
-  //   // this.userService.getUser(this.registerForm.username);
-  // }
+  userLogin() {
+
+    // id's in dialog component to stop showing dialog
+    // document.getElementById('dialog-box').style.display = 'none';
+    // document.getElementById('overlay').style.opacity = '0';
+
+
+    // console.log('login');
+    // console.log(this.registerForm.username);
+    // console.log(this.userService.getUser(this.registerForm.username));
+    // this.userService.getUser(this.registerForm.username);
+  }
 
 
 }

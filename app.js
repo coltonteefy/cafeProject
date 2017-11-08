@@ -13,7 +13,7 @@ app.use('/', routes);
 
 
 // connect to database
-mongoose.connect('mongodb://localhost:27017/upseatscustomers', function (err, db) {
+mongoose.connect('mongodb://localhost:27017/customers', function (err, db) {
     if (err){
         console.log('could not connect to the database');
         throw err;

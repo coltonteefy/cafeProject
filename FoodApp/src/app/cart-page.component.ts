@@ -42,36 +42,41 @@ import {Kitchen} from "./kitchen";
   providers: [CartService, KitchenService]
 })
 export class CartPageComponent implements OnInit {
-  cart: Cart;
-  cartItems: Cart[];
-  kitchen: Kitchen;
-  kitchenItems: Kitchen[];
+  private randomNumber = (((1 + Math.random()) * 0x10000) | 0);
+  private id;
+
+  cart:Cart;
+  cartItems:Cart[];
+  kitchen:Kitchen;
+  kitchenItems:Kitchen[];
   subTotal = 0;
-  tax: number;
-  total: number;
-  payPal: number;
-  empty: boolean;
+  tax:number;
+  total:number;
+  payPal:number;
+  empty:boolean;
   cartAnimate = 'out';
   emptyCartTxt = 'in';
+  printNum = 0;
+  tmpId = this.id;
 
 
-  constructor(private cartService: CartService,
-              private kitchenService: KitchenService) {
+  constructor(private cartService:CartService,
+              private kitchenService:KitchenService) {
   }
 
   ngOnInit() {
     this.cartService.changes
-      .subscribe((data: any) => {
+      .subscribe((data:any) => {
         this.cartItems = data.cart;
         this.subTotal = data.total;
         this.tax = data.total * .04;
-        this.total = data.total + this.tax;
+        this.total = +data.total + this.tax;
         this.isEmpty(this.cartItems);
         this.payPal = +this.total.toFixed(2);
       });
   }
 
-  isEmpty(cart: any) {
+  isEmpty(cart:any) {
     if (cart.length > 0) {
       this.empty = false;
       this.cartAnimate = 'in';
@@ -84,13 +89,66 @@ export class CartPageComponent implements OnInit {
   }
 
   purchase() {
-    // this.kitchenService.addToKitchen({id: this.cart.id, name: this.cart.name});
-    // console.log(this.kitchenService + "this is the kitchen");
-    // console.log(this.cartItems);
+    this.id = this.randomNumber.toString();
+    //
+    // this.kitchenService.addToKitchen({
+    //   id: this.id
+    // });
+
+    for (let i = 0; i < this.cartService.store.value.cart.length; i++) {
+
+      this.kitchenService.addToKitchen({
+        orderTracker: this.printNum,
+        name: this.cartService.store.value.cart[i].name,
+        id: this.id,
+        quantity: this.cartService.store.value.cart[i].quantity,
+        description: this.cartService.store.value.cart[i].description
+      });
+      this.printNum++;
+    }
+    // this.kitchenService.addToKitchen({
+    //   name: this.cartService.store.value.cart.map(item => item.name),
+    //   id: this.id,
+    //   quantity: this.cartService.store.value.cart.map(item => item.quantity),
+    //   description: this.cartService.store.value.cart.map(item => item.description)
+    // });
+
+    this.randomNumber = (((1 + Math.random()) * 0x10000) | 0);
     this.cartService.clearOrder();
   }
 
-  removeFromCart(id: any) {
+  clearCart() {
+    this.cartService.clearOrder();
+  }
+
+  removeFromCart(id:any) {
     this.cartService.deleteFromCart(id);
+  }
+
+  quantityUp(name:string) {
+    let index:any;
+    let origPrice:any;
+
+    index = this.cartItems.map(item => item.name).indexOf(name);
+    origPrice = this.cartService.store.value.cart[index].price / this.cartService.store.value.cart[index].quantity;
+
+    this.cartService.store.value.cart[index].quantity++;
+    this.cartService.store.value.cart[index].price += origPrice;
+    this.cartService.updateCartQuantityAndPrice(index, this.cartService.store.value.cart[index].quantity, this.cartService.store.value.cart[index].price)
+
+  }
+
+  quantityDown(name:string) {
+    let index:any;
+    let origPrice:any;
+    index = this.cartItems.map(item => item.name).indexOf(name);
+    origPrice = this.cartService.store.value.cart[index].price / this.cartService.store.value.cart[index].quantity;
+
+    if (this.cartService.store.value.cart[index].quantity > 1) {
+      this.cartService.store.value.cart[index].quantity--;
+      this.cartService.store.value.cart[index].price -= origPrice;
+    }
+
+    this.cartService.updateCartQuantityAndPrice(index, this.cartService.store.value.cart[index].quantity, this.cartService.store.value.cart[index].price)
   }
 }

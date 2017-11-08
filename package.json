@@ -9,11 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "mongodb": "^2.2.30",
-    "mongoose": "^4.11.3",
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.12",
     "ng-click-outside": "^2.3.5",
-    "nodemailer": "^4.0.1"
+    "nodemailer": "^4.0.1",
+    "random-id": "0.0.2"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.4.4",
+    "nodemon": "^1.12.1"
   }
 }

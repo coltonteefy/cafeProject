@@ -1,195 +1,280 @@
 {
-  "burgerList": [
-    {
-      "name": "Original Burger",
-      "description": "Beef patty with tomato, lettuce, onion and pickles",
-      "image": "http://img1.cookinglight.timeinc.net/sites/default/files/styles/300x300/public/image/2015/06/main/oh3959p159-simple-brisket-burgers.jpg?itok=_7dY5E5R",
-      "price": 4.99
-    },
-    {
-      "name": "Southwest Burger",
-      "description": "Beef patty with homemade salsa, avocado, lettuce, tomato and pepper jack cheese",
-      "image": "https://www.valleynaturalfoods.com/wp-content/uploads/2013/11/Southwest-Bison-Burger-300x300.jpg",
-      "price": 6.99
-    },
-    {
-      "name": "Bacon BBQ Burger",
-      "description": "Beef patty with sweet and tangy bbq sauce, crispy bacon, cheddar cheese, lettuce, onion ring and jalapeno",
-      "image": "https://imagesapt.apontador-assets.com/fit-in/640x480/00ae021ce9744db8ab6d68f0b6bc3597/applebees--shopping-morumbi.jpg",
-      "price": 7.49
-    },
-    {
-      "name": "Buffalo Burger",
-      "description": "Beef patty with buffalo sauce, crumbled blue cheese crumbles,arugula, caramelized onion, and cheddar cheese",
-      "image": "https://cdn2.tmbi.com/TOH/Images/Photos/37/300x300/exps174853_SD153320B12_09_4b.jpg",
-      "price": 6.99
-    }
-  ],
   "pizzaList": [
     {
       "name": "Cheese",
-      "description": "Cheese and tomato sauce",
-      "image": "https://s3-ca-central-1.amazonaws.com/urteksolutions/res.urtek.ca/assets/uploads/2015/04/1019882-300x300.jpg",
-      "price": 6.49
+      "description": "Mozzarella cheese and tomato sauce",
+      "image": "http://www.roomsandmeals.com/images/meals/cheese-lovers-veg-pizza-hut-sr.png",
+      "price": 11.99,
+      "quantity": 0
     },
     {
       "name": "Pepperoni",
-      "description": "Cheese and pepperoni",
-      "image": "https://d104wv11b7o3gc.cloudfront.net/wp-content/uploads/2016/03/low-carb-pepperoni-pizza-5-300x300.jpg",
+      "description": "Mozzarella cheese and pepperoni",
+      "image": "http://www.roomsandmeals.com/images/meals/pepperoni-provinciale-beef-pepperoni-pizza-hut-sr.png",
+      "price": 12.99,
+      "quantity": 0
+    },
+    {
+      "name": "BBQ Chicken",
+      "description": "BBQ Chicken, onions, green peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/bbq-chicken-pizza-hut-sr.png",
+      "price": 14.99,
+      "quantity": 0
+    },
+    {
+      "name": "Chicken Bacon",
+      "description": "Chicken, bacon, sausage, beef pepperoni, pineapple, peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/chicken-bacon-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Fiery Chicken",
+      "description": "Grilled chicken, bacon, pepperoni, jalapeno, peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/chicken-stravaganza-fiery-chicken-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Supreme",
+      "description": "Pepperoni, ham, beef, pork sausage, Italian sausage, red onions, mushrooms, green peppers, black olives",
+      "image": "http://www.roomsandmeals.com/images/meals/spicy-seafood-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Meat Lovers",
+      "description": "Ham, bacon, canadian bacon, sausage, pepperoni, grilled chicken",
+      "image": "http://www.roomsandmeals.com/images/meals/meat-lovers-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Hawaiian",
+      "description": "Bacon, ham, pineapple",
+      "image": "http://www.roomsandmeals.com/images/meals/meat-lovers-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Cheese and Onion",
+      "description": "Crispy onions with a double layer of mozzarella cheese",
+      "image": "http://www.roomsandmeals.com/images/meals/cheesy-onion-veg-pizza-hut-sr.png",
+      "price": 6.49
+    },
+    {
+      "name": "All Pepped Up",
+      "description": "Green pepper, jalapeno, cherry peppers, banana pepper",
+      "image": "http://www.roomsandmeals.com/images/meals/tandoori-chicken-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Veggie Lover",
+      "description": "Red onion, black olives, green bell pepper, tomato, mushroom",
+      "image": "https://5.imimg.com/data5/VE/UE/MY-5599753/shahjahani-paneer-pizza-125x125.jpg",
+      "price": 6.49,
+      "quantity": 0
+    }
+  ],
+  "meatsList": [
+    {
+      "name": "Pepperoni",
+      "description": "Mozzarella cheese and pepperoni",
+      "image": "http://www.roomsandmeals.com/images/meals/pepperoni-provinciale-beef-pepperoni-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Meat Lovers",
+      "description": "Ham, bacon, canadian bacon, sausage, pepperoni, grilled chicken",
+      "image": "http://www.roomsandmeals.com/images/meals/meat-lovers-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Supreme",
+      "description": "Pepperoni, ham, beef, pork sausage, Italian sausage, red onions, mushrooms, green peppers, black olives",
+      "image": "http://www.roomsandmeals.com/images/meals/spicy-seafood-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
+    },
+    {
+      "name": "Chicken Bacon",
+      "description": "Chicken, bacon, sausage, beef pepperoni, pineapple, peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/chicken-bacon-pizza-hut-sr.png",
       "price": 6.49
     },
     {
       "name": "BBQ Chicken",
-      "description": "BBQ base, cheese, grilled chicken, onion, and green peppers",
-      "image": "http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/62/77/5/vVinIcrvR42HAdNUGLkQ_pz2.jpg",
-      "price": 6.49
+      "description": "BBQ Chicken, onions, green peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/bbq-chicken-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     },
     {
-      "name": "Supreme",
-      "description": "pepperoni, ham, beef, pork sausage, Italian sausage, red onions, mushrooms, green peppers and black olives",
-      "image": "http://www.flaminrooster.com/wp-content/uploads/2016/11/pizzas1-300x300.jpg",
-      "price": 6.49
-    },
-    {
-      "name": "Hawaiian",
-      "description": "Ham, bacon, and pineapple",
-      "image": "http://d2gk7xgygi98cy.cloudfront.net/1374-3-large.jpg",
-      "price": 6.49
+      "name": "Fiery Chicken",
+      "description": "Grilled chicken, bacon, pepperoni, jalapeno, peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/chicken-stravaganza-fiery-chicken-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     }
   ],
-  "pancakeList": [
+  "chickenList": [
     {
-      "name": "Butter Milk Pancakes",
-      "description": "3 classic buttermilk pancakes",
-      "image": "https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_1.0,f_auto,q_auto,w_300/24330_sfs-buttermilk-pancakes-25",
-      "price": 2.99
+      "name": "Chicken Bacon",
+      "description": "Chicken, bacon, sausage, beef pepperoni, pineapple, peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/chicken-bacon-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     },
     {
-      "name": "Banana Walnut Pancakes",
-      "description": "Banana, walnut praline and salted caramel sauce",
-      "image": "https://under500calories.com/photos/300x300/12388.jpg",
-      "price": 3.99
+      "name": "BBQ Chicken",
+      "description": "BBQ Chicken with pineapple, onions, peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/bbq-chicken-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     },
     {
-      "name": "Blueberry Pancakes",
-      "description": "Fresh blueberry, crème fraîche and toasted granola",
-      "image": "http://www.lilvienna.com/wp-content/uploads/Fluffy-Buttermilk-Pancakes-recipe.jpg",
-      "price": 3.99
-    },
-    {
-      "name": "Chocolate Chip Pancakes",
-      "description": "3 classic buttermilk pancakes with chocolate chips",
-      "image": "http://www.shebakeshere.com/wp-content/uploads/2013/05/bananaquinoapancakes-2-300x300.jpg",
-      "price": 2.99
+      "name": "Fiery Chicken",
+      "description": "Grilled chicken, bacon, pepperoni, jalapeno, peppers",
+      "image": "http://www.roomsandmeals.com/images/meals/chicken-stravaganza-fiery-chicken-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     }
   ],
-  "omeleteList": [
+  "veggiesList": [
     {
-      "name": "Santa Fe",
-      "description": "Three eggs, diced jalapenos, cilantro, tomatoes, onions, tortilla strips, melted Monterey Jack cheese and chipotle sauce",
-      "image": "https://i2.wp.com/tootsweetcupcakes.com/wp-content/uploads/2016/09/omelet-600x450-COMP-642749.jpg?resize=300%2C300",
-      "price": 4.99
+      "name": "Cheese",
+      "description": "Mozzarella cheese and tomato sauce",
+      "image": "http://www.roomsandmeals.com/images/meals/cheese-lovers-veg-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     },
     {
-      "name": "Bacon Avocado",
-      "description": "Three eggs, hickory-smoked bacon, spinach, tomatoes, Monterey Jack cheese and avocado",
-      "image": "http://www.1275cafe.com/wp-content/uploads/jpg/omelette_orange_close_glam-300x300.jpg",
-      "price": 6.99
+      "name": "All Pepped Up",
+      "description": "Green pepper, jalapeno, cherry peppers, banana pepper",
+      "image": "http://www.roomsandmeals.com/images/meals/tandoori-chicken-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     },
     {
-      "name": "Hickory-Smoked Ham & Cheese",
-      "description": "Three eggs, red and green bell peppers, caramelized onions and cheddar cheese",
-      "image": "https://cdn2.tmbi.com/TOH/Images/Photos/37/300x300/Ham-and-Swiss-Omelet_exps90569_Webcard1306_07_2bC_RMS.jpg",
-      "price": 7.49
+      "name": "Cheese and Onion",
+      "description": "Crispy onions with a double layer of mozzarella cheese",
+      "image": "http://www.roomsandmeals.com/images/meals/cheesy-onion-veg-pizza-hut-sr.png",
+      "price": 6.49,
+      "quantity": 0
     },
     {
-      "name": "Egg Whites and Veggies",
-      "description": "Open-faced three egg white omelet with spinach, mushrooms, caramelized onions, tomatoes and goat cheese",
-      "image": "http://vidamoderna.com/wp-content/uploads/2016/01/Receta_Giada_De_Laurentiis_Frittata_780x510.jpg",
-      "price": 6.99
+      "name": "Veggie Lover",
+      "description": "Red onion, black olives, green bell pepper, tomato, mushroom",
+      "image": "https://5.imimg.com/data5/VE/UE/MY-5599753/shahjahani-paneer-pizza-125x125.jpg",
+      "price": 6.49,
+      "quantity": 0
     }
   ],
-  "classicList": [
+  "saladsList": [
     {
-      "name": "Turkey Sausage & Eggs",
-      "description": "Turkey sausage and two eggs served any style. Comes with toast or muffin and herb roasted potatoes.",
-      "image": "http://www.tasteslovely.com/wp-content/uploads/2016/08/Homemade-Paleo-Breakfast-Sausage-Patties-tasteslovely.com_-300x300.jpg",
-      "price": 2.99
+      "name": "House Salad",
+      "description": "Mixed greens, tomato, onion, and cucumber",
+      "image": "https://www.panerabread.com/foundation/menu/grid/seasonal-greens-salad-whole.jpg/_jcr_content/renditions/seasonal-greens-salad-whole.desktop.jpeg",
+      "price": 2.99,
+      "quantity": 0
     },
     {
-      "name": "Pork Sausage & Eggs",
-      "description": "Pork sausage and two eggs served any style. Comes with toast or muffin and herb roasted potatoes.",
-      "image": "http://www.canterslv.com/wp-content/uploads/2017/01/Sausage-N-Eggs.jpg",
-      "price": 2.99
+      "name": "Caesar Salad",
+      "description": "Romaine lettuce, croutons, parmesan cheese, and caesar dressing",
+      "image": "https://www.panerabread.com/foundation/menu/grid/caesar-salad-whole.jpg/_jcr_content/renditions/caesar-salad-whole.desktop.jpeg",
+      "price": 2.99,
+      "quantity": 0
     },
     {
-      "name": "Hickory-Smoked Bacon & Eggs",
-      "description": "Hickory-smoked bacon and two eggs served any style. Comes with toast or muffin and herb roasted potatoes.",
-      "image": "http://www.canterslv.com/wp-content/uploads/2016/12/Two-Eggs-Any-Style.jpg",
-      "price": 3.99
+      "name": "Chicken Caesar Salad",
+      "description": "Romaine lettuce, grilled chicken, croutons, parmesan cheese, and caesar dressing",
+      "image": "https://www.panerabread.com/foundation/menu/grid/chicken-caesar-salad-whole.jpg/_jcr_content/renditions/chicken-caesar-salad-whole.desktop.jpeg",
+      "price": 3.99,
+      "quantity": 0
     },
     {
-      "name": "Eggs",
-      "description": "Two eggs served any style. Comes with toast or muffin and herb roasted potatoes.",
-      "image": "https://www.edamam.com/web-img/ac4/ac4e8a8fcf625ce9c0f322313a7413b1.jpg",
-      "price": 1.99
+      "name": "Greek Salad",
+      "description": "Romaine lettuce, tomato, black olives, cucumber, onion, and chunks of feta",
+      "image": "https://www.panerabread.com/foundation/menu/grid/greek-salad-whole.jpg/_jcr_content/renditions/greek-salad-whole.desktop.jpeg",
+      "price": 3.99,
+      "quantity": 0
     }
   ],
-  "hotDrinksList": [
+  "twoLiterDrinkList": [
     {
-      "name": "Coffee",
-      "image": "",
-      "price": 1.49
+      "name": "Coke",
+      "description": "2 Liter",
+      "image": "https://5.imimg.com/data5/FL/KY/MY-12951225/coca-cola-bottle-125x125.jpg",
+      "price": 1.49,
+      "quantity": 0
     },
     {
-      "name": "Espresso",
-      "image": "",
-      "price": 1.49
+      "name": "Diet Coke",
+      "description": "2 Liter",
+      "image": "https://jpg.breadberry.com/content/images/thumbs/0094276_coca-cola-coke-zero-2-liter-passover_125.jpeg",
+      "price": 1.49,
+      "quantity": 0
     },
     {
-      "name": "Double Espresso",
-      "image": "",
-      "price": 1.49
+      "name": "Coke Zero",
+      "description": "2 Liter",
+      "image": "https://jpg.superstopnj.com/content/images/thumbs/0036264_coca-cola-coke-zero_125.jpeg",
+      "price": 1.99,
+      "quantity": 0
     },
     {
-      "name": "Mocha",
-      "image": "",
-      "price": 1.49
+      "name": "Sprite",
+      "description": "2 Liter",
+      "image": "https://jpg.superstopnj.com/content/images/thumbs/0036265_coca-cola-2l-sprite-2-lt_125.jpeg",
+      "price": 2.49,
+      "quantity": 0
     },
     {
-      "name": "Tea",
-      "description": "Earl Grey, Breakfast, Green, Camomile, Mint, Rooibos",
-      "image": "",
-      "price": 1.49
+      "name": "Orange Fanta",
+      "description": "2 Liter",
+      "image": "https://jpg.superstopnj.com/content/images/thumbs/0036268_coca-cola-fanta-ornage-caffiene-free-2-l_125.jpeg",
+      "price": 1.99,
+      "quantity": 0
     }
   ],
-  "bottleList": [
+  "twentyOzDrinkList": [
     {
-      "name": "Fresh Orange Juice",
-      "image": "",
-      "price": 1.49
+      "name": "Coke",
+      "description": "20 oz",
+      "image": "https://jpg.kosherfamily.com/content/images/thumbs/0029639_coca-cola-20-oz-coke_125.jpeg",
+      "price": 1.59,
+      "quantity": 0
     },
     {
-      "name": "Orangina",
-      "image": "",
-      "price": 2.49
+      "name": "Diet Coke",
+      "description": "20 oz",
+      "image": "https://jpg.kosherfamily.com/content/images/thumbs/0029640_coca-cola-20-oz-diet-coke_125.jpeg",
+      "price": 1.59,
+      "quantity": 0
     },
     {
-      "name": "Soda",
-      "image": "",
-      "price": 1.99
+      "name": "Coke Zero",
+      "description": "20 oz",
+      "image": "https://jpg.kosherfamily.com/content/images/thumbs/0029579_coca-cola-coke-zero-20-oz_125.jpeg",
+      "price": 1.59,
+      "quantity": 0
     },
     {
-      "name": "Water",
-      "image": "",
-      "price": 1.99
-    }
-  ],
-  "fountainDrinks": [
+      "name": "Sprite",
+      "description": "20 oz",
+      "image": "https://jpg.kosherfamily.com/content/images/thumbs/0029675_coca-cola-20-oz-sprite-20-oz_125.jpeg",
+      "price": 1.59,
+      "quantity": 0
+    },
     {
-      "name": "All Fountain Drinks",
-      "image": "",
-      "price": 1.49
+      "name": "Orange Fanta",
+      "description": "20 oz",
+      "image": "https://jpg.kosherfamily.com/content/images/thumbs/0029563_coca-cola-20-oz-fanta-orange_125.jpeg",
+      "price": 1.59,
+      "quantity": 0
     }
   ]
 }

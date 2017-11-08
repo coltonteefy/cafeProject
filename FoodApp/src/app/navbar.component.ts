@@ -33,16 +33,19 @@ export class NavbarComponent implements OnInit, OnDestroy {
     'http://www.graziellasmenu.com/pizza1000x600.jpg'
   ];
   currentPic = this.foodPics[this.i];
-  cart: Cart;
-  cartItems: Cart[];
+  cart:Cart;
+  cartItems:Cart[];
+  cartTotalArray = [];
   cartTotal = 0;
+  quantityTrack = 0;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService:CartService) {
   }
 
   ngOnInit() {
     this.onResize();
     this.changePic();
+
 
     this.timer = Observable.timer(0, 5000).subscribe(t => {
       this.changePic();
@@ -50,11 +53,20 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
 
     this.cartService.changes
-      .subscribe((data: any) => {
+      .subscribe((data:any) => {
         this.cartItems = data.cart;
-        this.cartTotal = data.cart.length;
-      });
+        this.cartTotal = 0;
 
+        if (data.cart.length > 0) {
+          this.cartTotalArray = [];
+          // for (let i = 0; i < this.cartItems.length; i++) {
+          //   this.cartTotalArray.push(parseInt(data.cart[i].quantity));
+          // }
+
+          this.cartTotalArray = this.cartItems.map(item => parseInt(item.quantity));
+          this.cartTotal = this.cartTotalArray.reduce(this.getSum);
+        }
+      });
   }
 
   ngOnDestroy() {
@@ -72,28 +84,34 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (this.i >= (this.foodPics.length - 1)) {
       this.i = 0;
       this.currentPic = this.foodPics[this.i];
-      // this.i = this.i + 1;
     } else {
       this.i = this.i + 1;
     }
     this.currentPic = this.foodPics[this.i];
   }
 
-  scrollWin() {
-    if (innerWidth > 400) {
-      window.scrollTo(0, 525);
-    } else {
-      window.scrollTo(0, 0);
-    }
+  scrollWindow() {
+    window.scrollTo(0, 0);
+    // if (innerWidth > 400) {
+    //   window.scrollTo(0, 525);
+    // } else {
+    //   window.scrollTo(0, 0);
+    // }
   }
 
   openSideNav() {
-    document.getElementById('mySidenav').style.width = '250px';
+    document.getElementById('mySidenav').style.width = '100%';
     document.getElementById('mySidenav').style.visibility = 'visible';
+    document.getElementById('nav').style.opacity = '0';
   }
 
   closeSideNav() {
     document.getElementById('mySidenav').style.width = '0';
     document.getElementById('mySidenav').style.visibility = 'none';
+    document.getElementById('nav').style.opacity = '1';
+  }
+
+  getSum(total, num) {
+    return total + num;
   }
 }

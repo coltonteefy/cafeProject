@@ -1,81 +1,86 @@
-<!--<header class="" id="head">-->
-  <!--<img id="headerImg" [src]="currentPic">-->
-  <!--&lt;!&ndash;<iframe src="https://www.youtube.com/embed/qA6ze_LgySs?autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1&amp;playlist=PL24Zydxfie_hCHKRXOpDgIjhr-CnL4nz9" frameborder="0" allowfullscreen muted="true"></iframe>&ndash;&gt;-->
-  <!--<h1 class="upsEats">No More Waiting,<br>No More Lines,<br>Just UPS Eats</h1>-->
-<!--</header>-->
-
-<div id="nav" class="sticky-top">
-  <ul id="navList" class="transition">
-    <li class="logo">
-      <a class="" routerLink="kitchen-side-view">
-        <img (click)="scrollWin()" id="logo"
-             src="http://globalsummit.uscsupplychain.com/wp-content/uploads/2016/05/ups.gif">
-      </a>
-    </li>
-    <li>
-      <a class="pages hidden-xs-down" routerLink="breakfast-menu">
-        <!--<i class="fa fa-coffee" aria-hidden="true"></i>-->
-        <i (click)="scrollWin()" class="fa fa-sun-o" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a class="pages hidden-xs-down" routerLink="lunch-menu">
-        <i (click)="scrollWin()" class="fa fa-cutlery" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a class="pages hidden-xs-down" routerLink="drink-menu">
-        <i (click)="scrollWin()" class="fa fa-coffee" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a class="pages hidden-xs-down" (click)="showDialog = !showDialog">
-        <i class="fa fa-user-o" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a class="pages hidden-xs-down" routerLink="cart-page">
-        <i (click)="scrollWin()" class="fa fa-shopping-cart" aria-hidden="true">
-          <h6 *ngIf="cartTotal > 0" class="cart-total">{{cartTotal}}</h6>
-        </i>
-      </a>
-    </li>
-    <li id="drop-menu">
-      <a class="pages hidden-sm-up">
-        <i (click)="openSideNav()" class="fa fa-bars" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
+<!--side navigation-->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)="closeSideNav()">&times;</a>
-  <a class="pages" routerLink="breakfast-menu" (click)="closeSideNav()">
-    <!--<i class="fa fa-coffee" aria-hidden="true"></i>-->
-    <i (click)="scrollWin()" class="fa fa-sun-o" aria-hidden="true"></i>
-    <h4 class="side-nav-choice">Breakfast</h4>
+  <a class="pages" routerLink="pizza" (click)="closeSideNav()">
+    <h4 class="side-nav-choice">Pizza</h4>
   </a>
-  <a class="pages" routerLink="lunch-menu" (click)="closeSideNav()">
-    <i (click)="scrollWin()" class="fa fa-cutlery" aria-hidden="true"></i>
-    <h4 class="side-nav-choice">Lunch</h4>
+  <a class="pages" routerLink="salads" (click)="closeSideNav()">
+    <h4 class="side-nav-choice">Salads</h4>
+  </a>
+  <a class="pages" routerLink="sides" (click)="closeSideNav()">
+    <h4 class="side-nav-choice">Sides</h4>
   </a>
   <a class="pages" routerLink="drink-menu" (click)="closeSideNav()">
-    <i (click)="scrollWin()" class="fa fa-coffee" aria-hidden="true"></i>
     <h4 class="side-nav-choice">Drinks</h4>
   </a>
-  <a class="pages" (click)="showDialog = !showDialog" >
-    <i class="fa fa-user-o" aria-hidden="true"></i>
+  <a class="pages" routerLink="sauces" (click)="closeSideNav()">
+    <h4 class="side-nav-choice">Sauces</h4>
+  </a>
+  <a class="pages" (click)="showDialog = !showDialog" (click)="closeSideNav()">
     <h4 class="side-nav-choice">Login</h4>
   </a>
   <a class="pages" routerLink="cart-page" (click)="closeSideNav()">
-    <i (click)="scrollWin()" class="fa fa-shopping-cart" aria-hidden="true">
-      <h6 *ngIf="cartTotal > 0" class="cart-total">{{cartTotal}}</h6>
-    </i>
-    <h4 id="side-nav-cart-text" *ngIf="cartTotal > 0" class="side-nav-choice">Cart</h4>
-    <h4 *ngIf="cartTotal < 1" class="side-nav-choice">Cart</h4>
+    <h4 class="side-nav-choice">Cart</h4>
   </a>
 </div>
 
-<!--<button (click)="showDialog = !showDialog" class="btn" style="background-color: red; position: relative">test</button>-->
+<!--navigation-->
+<div id="nav" class="sticky-top row">
+
+  <div class="logo-container logo col-lg-1 col-md-1 col-sm-12 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <img (click)="scrollWindow()" id="logo"
+           routerLink="kitchen-side-view" src="../assets/slice3.png">
+    </div>
+
+    <div class="col-sm-6 col-xs-6 hidden-lg hidden-md hidden-sm">
+      <i (click)="openSideNav()" class="fa fa-bars pull-right" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="list col-lg-7 col-md-7 hidden-xs">
+    <ul id="navList" class="transition">
+      <li class="nav-item">
+        <a class="active-page pages" routerLink="pizza" (click)="scrollWindow()">
+          <h4>Pizza</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="pages" routerLink="salads" (click)="scrollWindow()">
+          <h4>Salads</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="pages" routerLink="sides" (click)="scrollWindow()">
+          <h4>Sides</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="pages" routerLink="drink-menu" (click)="scrollWindow()">
+          <h4>Drinks</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="pages" routerLink="sauces" (click)="scrollWindow()">
+          <h4>Sauces</h4>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="user-cart col-lg-4 col-md-4 hidden-xs">
+
+    <div class="hidden-xs-down user-cart-i col-lg-6 col-md-6 col-sm-6" (click)="showDialog = !showDialog">
+      <i class="fa fa-user-o pull-right" aria-hidden="true"></i>
+    </div>
+    <div class="hidden-xs-down user-cart-i col-lg-6 col-md-6 col-sm-6">
+      <i (click)="scrollWindow()" class="fa fa-shopping-cart pull-right" aria-hidden="true" routerLink="cart-page">
+        <h6 *ngIf="cartTotal > 0" class="cart-total"><b>{{cartTotal}}</b></h6>
+      </i>
+    </div>
+
+  </div>
+
+</div>
 
 <app-dialog [(visible)]="showDialog"></app-dialog>

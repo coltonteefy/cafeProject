@@ -1,15 +1,5 @@
-<div [@dialog] *ngIf="visible" class="dialog">
-  <!--<div class="btn-group" data-toggle="buttons">-->
-    <!--<label class="btn btn-primary active">-->
-      <!--<input type="radio" name="options" id="option1" autocomplete="off" checked> Login-->
-    <!--</label>-->
-    <!--<label class="btn btn-primary">-->
-      <!--<input type="radio" name="options" id="option2" autocomplete="off"> Register-->
-    <!--</label>-->
-  <!--</div>-->
- <!---->
-  <!--<button type="button" class="btn btn-secondary">Login</button>-->
-  <!--<button type="button" class="btn btn-secondary">Register</button>-->
+<div [@dialog] *ngIf="visible" class="dialog" id="dialog-box">
   <user-registration></user-registration>
+  <h6 (click)="close()">cancel</h6>
 </div>
-<div *ngIf="visible" class="overlay" (click)="close()"></div>
+<div *ngIf="visible" class="overlay" id="overlay" (click)="close()"></div>

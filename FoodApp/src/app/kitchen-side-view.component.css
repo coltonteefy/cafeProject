@@ -2,8 +2,22 @@
   background-color: white;
   width: 100%;
   margin: 0 auto;
-  padding: 110px 50px 110px 50px;
+  padding: 110px 50px 295px 50px;
   min-height: 500px;
+}
+
+.empty-cart-container {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 110px 50px 640px 50px;
+  height: 600px;
+}
+
+.empty {
+  text-align: center;
+  font-family: 'Ruluko', sans-serif;
+  padding-top: 150px;
 }
 
 .body-up {
@@ -12,6 +26,16 @@
   min-height: 600px;
 }
 
+.table-responsive {
+  margin: 50px 0 100px 0;
+  border-bottom: 3px solid #ddd;
+}
+
+#orders-text {
+  text-align: center;
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 50px;
+}
 
 .delete-btn{
   width:75px;
@@ -32,3 +56,40 @@ tr{
   font-family: 'Ruluko', sans-serif;
   font-size: 20px;
 }
+
+.queue-top {
+  /*border-bottom: 2px solid #aeaeae;*/
+  background-color: rgba(211, 211, 211, 0.53);
+}
+
+.table {
+  border-bottom: none;
+}
+
+.table > thead > tr > th {
+  border-bottom: none;
+}
+
+.queue-items {
+  /*border-bottom: 1px solid #ddd;*/
+  /*border-top: 0 solid #ddd;*/
+}
+
+.queue-items td {
+  border-top: none;
+  padding: 35px 18px 35px 5px;
+}
+
+#quantity{
+  position: relative;
+  left: 35px;
+}
+
+.queue-items-bottom:first-child {
+  border-top: none;
+}
+
+.queue-items-bottom {
+  border-top: 3px solid #ddd;
+}
+

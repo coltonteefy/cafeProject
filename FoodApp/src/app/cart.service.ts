@@ -46,7 +46,6 @@ export class CartService {
   addToCart(newItem: any) {
     let current = Object.assign({}, this.getState());
     current.cart.push(newItem);
-
     this.setState(current);
   }
 
@@ -69,6 +68,13 @@ export class CartService {
     }
     newState.total = total;
     return newState;
+  }
+
+  updateCartQuantityAndPrice(index:number, quantity:number, price:number) {
+    let current = Object.assign({}, this.getState());
+    current.cart[index].quantity = quantity;
+    current.cart[index].price = price;
+    this.setState(current);
   }
 }
 

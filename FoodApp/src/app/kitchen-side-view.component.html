@@ -1,27 +1,32 @@
-<div class="container" id="body">
-  <h2>Orders</h2>
-  <div class="table-responsive">
+<div [class.empty-cart-container]="empty" class="container" id="body">
+  <h2 id="orders-text">Orders</h2>
+  <h4 class="empty" *ngIf="empty">No orders</h4>
+  <div *ngIf="!empty" class="table-responsive">
     <table class="table">
       <thead>
-      <tr>
-        <th>#</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Order</th>
-        <th>Delete order</th>
+      <tr class="queue-top">
+        <th>Order ID</th>
+        <th>Quantity</th>
+        <th>Item</th>
+        <th>Description</th>
+        <th class="pull-right">Delete order</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-      <tr *ngFor="let item of kitchenItems">
-        <td>{{item.id}}</td>
-        <td>Anna</td>
-        <td>Pitt</td>
-        <td>{{item.name}}</td>
-        <td><button type="button" class="delete-btn" (click)="delete(item.id)">Delete</button></td>
+      <tr *ngFor="let item of kitchenItems" class="queue-items" [ngClass]="{'queue-items-bottom': item.orderTracker === 0}">
+        <td *ngIf="item.orderTracker === 0" class="col-lg-2 col-sm-2" id="id"><b><u>{{item.id}}</u></b></td>
+        <td *ngIf="item.orderTracker > 0" class="col-lg-2 col-sm-2"></td>
+        <td class="col-lg-3 col-sm-3" id="quantity">{{item.quantity}}</td>
+        <td class="col-lg-3 col-sm-3" id="name">{{item.name}}</td>
+        <td class="col-lg-3 col-sm-3" id="description">{{item.description}}</td>
+        <td *ngIf="item.orderTracker === 0; deleteBtn" class="pull-right" id="delete">
+          <button type="button" class="delete-btn" (click)="delete(item.id)">Delete</button>
+        </td>
+        <td *ngIf="item.orderTracker > 0" class="col-lg-1"></td>
       </tr>
       </tbody>
     </table>
   </div>
 </div>
+
 

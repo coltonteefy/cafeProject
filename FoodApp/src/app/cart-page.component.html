@@ -5,43 +5,84 @@
     <!--<h5 class="total-price pull-right">Total: ${{totalPrice}}</h5>-->
     <ul class="cart-list">
       <li [@flyInOut]="cartAnimate" *ngFor="let item of cartItems" class="cart-items row">
-        <h4 class="pull-left col-lg-8 col-md-6">{{item.name}}</h4>
-        <div class="col-sm-4">
-          <h5 class="">${{item.price}}</h5>
-          <i (click)="removeFromCart(item.id)" class="fa fa-times pull-right" aria-hidden="true"></i>
+        <div class="col-lg-6 col-sm-12">
+          <i (click)="removeFromCart(item.id)" class="fa fa-times pull-right top-x hidden-lg hidden-md" aria-hidden="true"></i>
+          <h4 class="name"><b>{{item.name}}</b></h4>
+          <h5 class="description">{{item.description}}</h5>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-xs-6">
+          <h4 class="price">{{item.price | currency:'USD':true:'1.0-2'}}</h4>
+        </div>
+        <div class="col-lg-2 col-sm-6 col-xs-6 quantity-container">
+          <i class="fa fa-caret-up" aria-hidden="true" (click)="quantityUp(item.name)"></i>
+          <h4 id="quantity-num">{{item.quantity}}</h4>
+          <i class="fa fa-caret-down" aria-hidden="true" (click)="quantityDown(item.name)"></i>
+        </div>
+        <div class="col-lg-1 pull-right">
+          <i (click)="removeFromCart(item.id)" class="fa fa-times bottom-x hidden-sm hidden-xs" aria-hidden="true"></i>
         </div>
       </li>
-      <br>
     </ul>
   </div>
 
   <div *ngIf="!empty" class="total row" [@flyInOut]="cartEmptyTxt">
-    <h5 class="col-12">Sub Total: {{subTotal | currency:'USD':true:'1.0-2'}}</h5>
-    <h5 class="col-12">Tax: {{tax | currency:'USD':true:'1.0-2'}}</h5>
-    <h2 class="col-12 total-cost">Total: $
-      <form #form target="_blank" class="form-inline" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <h4 class="col-12">Sub Total: {{subTotal | currency:'USD':true:'1.0-2'}}</h4>
+    <h4 class="col-12">Tax: {{tax | currency:'USD':true:'1.0-2'}}</h4>
+    <h1 class="col-12 total-cost">Total: $
+      <form #form target="_blank" class="form-inline" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr"
+            method="post">
         <input type="hidden" name="cmd" value="_xclick">
         <input type="hidden" name="business" value="mmusale93@gmail.com">
         <input type="hidden" name="currency_code" value="USD">
         <input type="hidden" name="item_name" value="Paypal demo charge">
         <input name="item_number" type="hidden" value="0001"/>
-        <input type="text" class="form-control" size="30"  name="amount" [(ngModel)]="payPal"/>
+        <input type="text" class="form-control" size="30" name="amount" [(ngModel)]="payPal"/>
         <input type="hidden" name="return" value="http://localhost:4200/"/>
         <input type="hidden" name="cancel_return" value="http://localhost:4200/"/>
         <input type="hidden" name="custom" value={{title}}>
         <!--pass your notification URL-->
         <input name="notify_url" value="YOUR NOTIFICATION URL" type="hidden">
       </form>
-    </h2>
+    </h1>
     <div class="col-12 order-btn">
       <!--<button type="button" (click)="form.submit(); purchase()" src="https://www.paypal.com/en_US/i/btn/btn_buynow_LG.gif"-->
-              <!--border="0"-->
-              <!--name="submit" class="purchase-btn col-6"><i class="fa fa-paypal" aria-hidden="true"></i> Order-->
+      <!--border="0"-->
+      <!--name="submit" class="purchase-btn col-6"><i class="fa fa-paypal" aria-hidden="true"></i> Order-->
       <!--</button>-->
+
       <button type="button" (click)="purchase()" src="https://www.paypal.com/en_US/i/btn/btn_buynow_LG.gif"
               border="0"
-              name="submit" class="purchase-btn col-6"><i class="fa fa-paypal" aria-hidden="true"></i> Order
+              name="submit" class="purchase-btn col-6" data-toggle="modal" data-target="#thankYouModal"><i class="fa fa-paypal" aria-hidden="true"></i> Order
       </button>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h1>Are you sure you want to cancel your order?</h1>
+      </div>
+      <div class="modal-footer">
+        <button (click)="clearCart()" type="button" class="btn btn-danger" data-dismiss="modal">Yes, cancel it!</button>
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--thank you modal-->
+<div class="modal fade thankYouModal" id="thankYouModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-thanks-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h1>Thank you! Your order will be ready in about 15 minutes</h1>
+      </div>
     </div>
   </div>
 </div>

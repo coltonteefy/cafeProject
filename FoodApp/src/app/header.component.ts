@@ -12,18 +12,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private timer;
   i = 0;
   foodPics = [
-    // grilled chicken and sandwich
-    'http://www.cincinnatimagazine.com/wp-content/uploads/sites/20/2015/03/CM_MAR15_FEATURE_T10_ABI1-e1425438722184.jpg',
-    // waffles
-    'https://images-gmi-pmc.edge-generalmills.com/900a8346-48b8-4419-9b94-17205d8cdc6e.jpg',
-    // sandwich pile
-    'https://static1.squarespace.com/static/55d25e52e4b075ba97049c9c/55d2786fe4b0ac4433e4c8cd/560aa0cde4b020611706a74a/1443537105903/panini-stack-min.jpg',
-    // sandwich and pasta
-    'http://cmzone.vzbqbxhynotw9ion96xv.netdna-cdn.com/wp-content/uploads/2016/09/back-to-biz-lunch-boxes-hero.jpg',
-    // chicken w/strawberries
-    'http://wholesomelicious-8101.kxcdn.com/wp-content/uploads/2016/05/Strawberry-Basil-Chicken.jpg',
-    // pizza
-    'http://www.graziellasmenu.com/pizza1000x600.jpg'
+    // big table pizza
+    'https://ahealthieryou.meijer.com/wp-content/uploads/2017/02/Cauliflower-Crust-Pizza.jpg',
+    //chicken and red pepper
+    'http://www.downtownromios.com/wp-content/uploads/2017/05/bianca.jpg',
+    //supreme
+    'https://assets-blog.fundera.com/assets/wp-content/uploads/2016/02/09134922/stoked-wood-fired-pizza-company.jpg',
+    //close up
+    'http://www.nunwood.com/wp-content/uploads/2015/03/Hot_pizza800x300.jpg',
+    //cheese chicken slice
+    'http://www.foodsaveurs.com/wp-content/uploads/2017/05/pizza-1-1200x450.jpeg',
+    // tomato, pineapple, pepper
+    'https://2erape3gkyv5ojcr3ljlepou-wpengine.netdna-ssl.com/wp-content/uploads/2017/03/012517_weekly-recipes_pizza.jpg'
   ];
   currentPic = this.foodPics[this.i];
 

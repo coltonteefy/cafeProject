@@ -2,14 +2,14 @@
   background-color: white;
   width: 100%;
   margin: 0 auto;
-  padding: 110px 50px 110px 50px;
+  padding: 110px 50px 200px 50px;
 }
 
 .empty-cart-container {
   background-color: white;
   width: 100%;
   margin: 0 auto;
-  padding: 110px 50px 110px 50px;
+  padding: 110px 50px 640px 50px;
   height: 600px;
 }
 
@@ -37,15 +37,16 @@ ul {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-
 .cart-list {
   position: relative;
   width: 100%;
+  font-family: 'Saira Condensed', sans-serif;
+  padding: 15px 0 0 40px;
 }
 
 .cart-items {
   position: relative;
-  margin: 0 auto;
+  margin: 10px auto;
   float: left;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.42);
@@ -57,18 +58,37 @@ ul {
 }
 
 .fa-times {
-  position: relative;
-  top: -25px;
+  /*position: relative;*/
+  /*top: -36px;*/
+  font-size: 25px;
 }
+
+.fa-times:hover {
+  color: rgba(220, 20, 60, 0.76);
+}
+
+/*@media (max-width: 991px){*/
+/*.fa-times {*/
+/*top: -155px;*/
+/*left: 15px;*/
+/*}*/
+/*}*/
+
+/*@media (max-width: 473px){*/
+/*.fa-times {*/
+/*top: -175px;*/
+/*}*/
+/*}*/
 
 .total {
   color: black;
   background-color: white;
-  font-family: 'Ruluko', sans-serif;
+  font-family: 'Saira Condensed', sans-serif;
   width: 100%;
   position: relative;
   bottom: -65px;
   padding: 40px 0 64px 0;
+  margin: 0 auto;
 }
 
 .purchase-btn {
@@ -104,8 +124,8 @@ ul {
 .form-control {
   border: transparent;
   position: relative;
-  top: -33px;
-  left: 83px;
+  top: -36px;
+  left: 80px;
   width: 50%;
   font-size: 30px;
   color: black;
@@ -117,12 +137,175 @@ ul {
   cursor: default;
 }
 
-.fa.fa-shopping-cart{
+.fa.fa-shopping-cart {
   font-size: 25px;
 }
 
 @media screen and (max-width: 570px) {
   .menu-list {
-    border-right:none;
+    border-right: none;
   }
 }
+
+.name {
+  font-size: 30px;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.price {
+  font-size: 22px;
+}
+
+.btn-secondary {
+  font-size: 20px;
+  border: none;
+}
+
+.btn-secondary:hover {
+  color: crimson;
+  border: none;
+  background-color: white;
+}
+
+.modal-dialog {
+  position: relative;
+  top: 100px;
+}
+
+.modal-content {
+  background-color: rgb(253, 253, 253);
+  border-color: #f9f9f9;
+  color: #a94442;
+}
+
+.modal-body {
+  position: relative;
+  left: 5px;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+.btn-outline-secondary {
+  color: black;
+  border: 1px solid #d9534f;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e8e8e8;
+}
+
+@media (min-width: 576px) {
+  .modal-sm {
+    max-width: 100%;
+  }
+}
+
+.quantity {
+  font-size: 25px;
+}
+
+.quantity-container {
+  padding: 0 0 0 0;
+  position: relative;
+  bottom: 28px;
+}
+
+@media (max-width: 991px) {
+  .quantity-container {
+    position: relative;
+    bottom: 28px;
+  }
+}
+
+@media (max-width: 473px) {
+  .quantity-container {
+    bottom: 28px;
+    left: 95px;
+  }
+}
+
+@media (max-width: 400px) {
+  .description {
+    width: 155px;
+    /*height: 115px;*/
+  }
+
+  .quantity-container {
+    /*bottom: 210px;*/
+    bottom: 28px;
+    left: 70px;
+    padding: 0 0 0 0;
+  }
+}
+
+.fa-caret-up {
+  position: relative;
+  top:12px;
+}
+
+.fa-caret-down {
+  position: relative;
+  bottom:12px;
+}
+
+
+.fa-caret-up, .fa-caret-down {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.23);
+  transition: all .2s ease-in-out;
+}
+
+.fa-caret-up:hover, .fa-caret-down:hover {
+  color: black;
+  transform: scale(1.07);
+}
+
+#edit {
+  /*border:1px solid rgba(0, 0, 0, 0.23);*/
+  font-family: 'Saira Condensed', sans-serif;
+}
+
+#edit:hover {
+  color: rgba(220, 20, 60, 0.76);
+  cursor: default;
+}
+
+.top-x {
+  position: relative;
+  top: 0;
+}
+
+.bottom-x {
+  position: relative;
+  right: 15px;
+}
+
+#quantity-num {
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  box-shadow: 1px 2px 2px rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 35px;
+  padding: 2px 0 2px 0;
+  text-align: center;
+  position: relative;
+  right: 10px;
+}
+
+.modal-thanks-content {
+  background-color: rgb(249, 249, 249);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px 0;
+  color: #4e4743;
+  width: 540px;
+  position: relative;
+  right: 85px;
+  top: 35px;
+}
+
+
+

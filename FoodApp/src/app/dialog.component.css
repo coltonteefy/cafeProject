@@ -15,7 +15,6 @@
   position: fixed;
   right: 0;
   left: 0;
-  top: 25px;
   margin-right: auto;
   margin-left: auto;
   background-color: white;
@@ -57,3 +56,7 @@
   border-color: #d59400;
 }
 
+h6:hover {
+  color: #ffb500;
+  cursor: default;
+}
