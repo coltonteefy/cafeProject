@@ -1,0 +1,422 @@
+.container {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 50px 50px 50px;
+}
+
+.menu-list {
+  position: relative;
+}
+
+.pizza-nav {
+  position: relative;
+  text-align: center;
+  left: 115px;
+}
+
+/*pizza nav ul*/
+.pizza-nav-list {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+  height: 75px;
+  font-family: 'Saira Condensed', sans-serif;
+}
+
+/*pizza ul li*/
+.pizza-nav-selections {
+  float: left;
+  font-size: 22px;
+  width: 20%;
+  text-align: center;
+  transition: all .2s ease-in-out;
+}
+
+.pizza-nav-selections:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .pizza-nav {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 752px) {
+  .pizza-nav-selections {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+
+  .pizza-nav-selections {
+    font-size: 15px;
+  }
+
+  .pizza-nav {
+    left: -15px;
+  }
+}
+
+.which-list {
+  font-size: 100px;
+  margin: 0 auto;
+  font-family: 'Saira Condensed', sans-serif;
+}
+
+.cart-page {
+  overflow: auto;
+  position: relative;
+}
+
+.cart {
+  position: relative;
+}
+
+#cart {
+  font-family: 'Lobster', cursive;
+  border-bottom: 1px solid black;
+}
+
+.body-up {
+  position: relative;
+  top: 75px;
+}
+
+.picture {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.food-pic {
+  border-radius: 70px;
+  position: relative;
+  bottom: 3px;
+}
+
+.custom-pic {
+  position: relative;
+  padding: 10px;
+  text-align: center;
+}
+
+.custom-pic img {
+  border-radius: 210px;
+  width: 200px;
+}
+
+.menu-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.58);
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+}
+
+.pizza-ul {
+  list-style: none;
+  padding: 50px;
+  margin: 0 auto;
+  position: relative;
+  left: 90px;
+}
+
+.each-item {
+  font-family: 'Saira Condensed', sans-serif;
+  color: black;
+  display: flex;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+  position: relative;
+  margin: 10px;
+  height: 425px;
+  transition: all .2s ease-in-out;
+}
+
+.each-item:hover {
+  box-shadow: 6px 8px 12px rgba(0, 0, 0, 0.45);
+  transform: scale(1.02);
+}
+
+.custom-item {
+  font-family: 'Saira Condensed', sans-serif;
+  color: black;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+  position: relative;
+  margin: 0 auto;
+  transition: all .2s ease-in-out;
+}
+
+.custom-item:hover {
+  box-shadow: 6px 8px 12px rgba(0, 0, 0, 0.45);
+  transform: scale(1.02);
+}
+
+.food-description {
+  position: relative;
+  top: -12px;
+  text-align: center;
+  /*min-height: 74px;*/
+}
+
+.food-description h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+}
+
+.price {
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.custom-description {
+  position: relative;
+  top: -12px;
+  text-align: center;
+}
+
+.add-to-cart {
+  background-color: transparent;
+  border: transparent;
+}
+
+.fa-plus-circle {
+  color: green;
+  font-size: 18px;
+  width: 0;
+  position: relative;
+  top: 8px;
+  left: 10px;
+}
+
+.cart-list {
+  position: relative;
+  width: 100%;
+}
+
+.cart-items {
+  position: relative;
+  margin: 0 auto;
+  float: left;
+  width: 100%;
+}
+
+.total-price {
+  position: relative;
+  bottom: 45px;
+}
+
+@media screen and (max-width: 1000px) {
+  .pizza-ul {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .each-item {
+    width: 360px;
+    margin: 10px auto;
+  }
+
+  .pizza-ul {
+    position: relative;
+    left: -15px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .pizza-ul {
+    position: relative;
+    left: -35px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .pizza-ul {
+    position: relative;
+    left: -85px;
+  }
+}
+
+.fa-times {
+  position: relative;
+  top: 10px;
+}
+
+.cart-stick {
+  top: -30px;
+  left: 50%;
+  z-index: 100;
+  position: fixed;
+  overflow: auto;
+  max-height: 515px;
+  width: 580px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.choiceBtn {
+  background-color: #ff9700;
+  border-radius: 4px;
+  border: 1px solid #fcb004;
+  font-size: 24px;
+  width: 60%;
+  height: 45px;
+  position: relative;
+  color: white;
+  font-family: 'Advent Pro', sans-serif;
+  alignment: center;
+  transition: all .2s ease-in-out;
+}
+
+.choiceBtn:hover {
+  background-color: white;
+  color: #fcb004;
+}
+
+
+.customize {
+  font-size: 18px;
+}
+
+.customize:hover {
+  cursor: pointer;
+  color: #fcb004;
+}
+
+.custom-choiceBtn {
+  background-color: #ff9700;
+  border-radius: 4px;
+  border: 1px solid #fcb004;
+  font-size: 24px;
+  margin: 0 auto;
+  width: 60%;
+  height: 45px;
+  position: relative;
+  color: white;
+  font-family: 'Advent Pro', sans-serif;
+  alignment: center;
+  transition: all .2s ease-in-out;
+}
+
+.custom-choiceBtn:hover {
+  background-color: white;
+  color: #fcb004;
+}
+
+.order-btn {
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .choiceBtn, .custom-choiceBtn {
+    width: 100%;
+  }
+}
+
+#quantity {
+  font-size: 15px;
+}
+
+.options:hover {
+  background-color: rgba(220, 20, 60, 0.27);
+}
+
+input[type=number] {
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  background-color: transparent;
+  border-radius: 4px;
+  color: black;
+  text-align: center;
+  width: 25%;
+  font-size: 15px;
+}
+
+.custom-order-btn {
+  text-align: center;
+}
+
+/*.custom-item:hover .custom-choiceBtn {*/
+/*width: 75%;*/
+/*}*/
+
+.custom-container {
+  margin-top: 10px;
+  padding-top: 30px;
+}
+
+/*modal box*/
+.modal {
+  background: white;
+}
+
+/*
+underline animation
+*/
+.sliding-middle-out {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.sliding-middle-out:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+.sliding-middle-out:hover:after {
+  width: 100%;
+  background: rgba(220, 39, 36, 0.9);
+}
+
+/*
+Form
+*/
+
+.form {
+  position: relative;
+  /*top: 8px;*/
+  /*top: -33px;*/
+}
+
+.form-control {
+  width: 55px;
+}
+
+.quantity{
+  font-size: 18px;
+}
+
+#quantity {
+  font-size: 18px;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .form-control {
+    width: 40px;
+  }
+
+  .customize, .quantity {
+    font-size: 15px;
+  }
+}
+
+.dropdown-menu {
+  height: 85px;
+  min-width: 100px;
+  font-size: 12px;
+}

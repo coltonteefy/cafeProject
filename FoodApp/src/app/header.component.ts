@@ -13,16 +13,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   i = 0;
   foodPics = [
     // big table pizza
-    'https://ahealthieryou.meijer.com/wp-content/uploads/2017/02/Cauliflower-Crust-Pizza.jpg',
-    //chicken and red pepper
+    'https://boardwalk-parkway.com/media-content/images/boardwalkpizza.jpg',
+    'https://www.keepitlocalok.com/sites/default/files/imagecache/Business_Headers/slideshows/upper-crust_slide_2.jpg',
     'http://www.downtownromios.com/wp-content/uploads/2017/05/bianca.jpg',
-    //supreme
     'https://assets-blog.fundera.com/assets/wp-content/uploads/2016/02/09134922/stoked-wood-fired-pizza-company.jpg',
-    //close up
-    'http://www.nunwood.com/wp-content/uploads/2015/03/Hot_pizza800x300.jpg',
-    //cheese chicken slice
-    'http://www.foodsaveurs.com/wp-content/uploads/2017/05/pizza-1-1200x450.jpeg',
-    // tomato, pineapple, pepper
+    'http://www.megapizzagrille.com/Restaurants/MPG-MegaPizzaGrille/Images/IndexPageImages/slide05.jpg',
     'https://2erape3gkyv5ojcr3ljlepou-wpengine.netdna-ssl.com/wp-content/uploads/2017/03/012517_weekly-recipes_pizza.jpg'
   ];
   currentPic = this.foodPics[this.i];
@@ -41,6 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.timer.unsubscribe();
   }
+
   changePic() {
     if (this.i >= (this.foodPics.length - 1)) {
       this.i = 0;

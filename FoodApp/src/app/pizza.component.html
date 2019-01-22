@@ -1,0 +1,218 @@
+<div class="modal fade col-lg-12" id="fullPageModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+  <modal-pizza></modal-pizza>
+</div>
+
+<!--pizza content-->
+<div class="container row" id="body">
+  <div class="col-lg-12 col-md-12 col-sm-12 menu-list">
+    <script type="text/javascript" src="randomID.js"></script>
+    <h1 class="menu-item">Pizza</h1>
+    <div class="row pizza-nav">
+      <ul class="col-lg-12 pizza-nav-list">
+        <li (click)="allPizzaOpen()" class="col-lg-2 col-sm-12 pizza-nav-selections sliding-middle-out" >All</li>
+        <li (click)="allMeatsOpen()" class="col-lg-2 col-sm-12 pizza-nav-selections sliding-middle-out">Meats</li>
+        <li (click)="allChickenOpen()" class="col-lg-2 col-sm-12 pizza-nav-selections sliding-middle-out">Chicken</li>
+        <li (click)="allVeggiesOpen()" class="col-lg-2 col-sm-12 pizza-nav-selections sliding-middle-out">Veggie</li>
+        <li class="col-lg-2 col-sm-12 pizza-nav-selections sliding-middle-out" data-toggle="modal"
+            data-target="#fullPageModal">Custom
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <!--
+      All Pizza
+      -->
+      <ul *ngIf="allPizza" [@flyInOut]="allIn" class="pizza-ul">
+        <li *ngFor="let item of pizzaList; let i = index" class="each-item col-lg-5 col-lg-offset-1 col-sm-12 row">
+
+          <div class="col-lg-12">
+            <div class="food-description">
+              <h2>{{item.name}}
+                <span class="price"> {{item.price | currency:'USD':true:'1.0-2'}}</span>
+              </h2>
+              <h5>{{item.description}}</h5>
+            </div>
+          </div>
+
+          <div class="col-lg-12 picture">
+            <img class="food-pic" src={{item.image}}>
+          </div>
+
+          <div class="order-btn col-lg-12">
+            <a (click)="addToCart(item.name, item.description, item.price)">
+              <button class="choiceBtn">Add To Cart</button>
+            </a>
+            <h4 class="customize" data-toggle="modal" data-target="#fullPageModal">Customize</h4>
+          </div>
+
+          <!--<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">-->
+          <div class="col-lg-12">
+              <form class="pull-left form">
+                <div class="form-group">
+                  <label for="sel1" class="quantity">Quantity
+                    <select class="form-control" id="sel1"
+                            (change)="selectChangeHandler($event)">
+                      <option class="options" *ngFor="let number of quantitySelect; let i = index" (click)="clickDrop(i)">{{number.num}}</option>
+                    </select>
+                  </label>
+                </div>
+              </form>
+          </div>
+
+          <!--<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">-->
+            <!--<div class="dropdown">-->
+              <!--<button class="btn btn-secondary dropdown-toggle float-left" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--Size-->
+              <!--</button>-->
+              <!--<div class="dropdown-menu" aria-labelledby="dropdownMenu2">-->
+                <!--<button class="dropdown-item" type="button" (click)="smallSelect()">Small</button>-->
+                <!--<button class="dropdown-item" type="button" (click)="mediumSelect()">Medium</button>-->
+                <!--<button class="dropdown-item" type="button" (click)="largeSelect()">Large</button>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        </li>
+      </ul>
+      <!--
+      All Meats
+      -->
+      <ul *ngIf="allMeats" [@flyInOut]="meatsIn" class="pizza-ul">
+        <li *ngFor="let item of meatsList" class="each-item col-lg-5 col-lg-offset-1 col-sm-12 row">
+          <div class="col-lg-12">
+            <div class="food-description">
+              <h2>{{item.name}}
+                <span class="price"> {{item.price | currency:'USD':true:'1.0-2'}}</span>
+              </h2>
+              <h5>{{item.description}}</h5>
+            </div>
+          </div>
+          <div class="col-lg-12 picture">
+            <img class="food-pic" src={{item.image}}>
+          </div>
+
+          <div class="order-btn col-lg-12">
+            <a (click)="addToCart(item.name, item.description, item.price)">
+              <button class="choiceBtn">Add To Cart</button>
+            </a>
+            <h4 class="customize" data-toggle="modal" data-target="#fullPageModal">Customize</h4>
+          </div>
+
+          <div class="col-lg-12">
+            <form class="pull-left form">
+              <div class="form-group">
+                <label for="sel1" class="quantity">Quantity
+                  <select class="form-control" id="sel1" (change)="selectChangeHandler($event)">
+                    <option *ngFor="let number of quantitySelect; let i = index" [ngValue]=" " (click)="clickDrop(i)">{{number.num}}</option>
+                  </select>
+                </label>
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+      <!--
+      All chicken
+      -->
+      <ul *ngIf="allChicken" [@flyInOut]="chickenIn" class="pizza-ul">
+        <li *ngFor="let item of chickenList" class="each-item col-lg-5 col-lg-offset-1 col-sm-12 row">
+          <div class="col-lg-12">
+            <div class="food-description">
+              <h2>{{item.name}}
+                <span class="price"> {{item.price | currency:'USD':true:'1.0-2'}}</span>
+              </h2>
+              <h5>{{item.description}}</h5>
+            </div>
+          </div>
+          <div class="col-lg-12 picture">
+            <img class="food-pic" src={{item.image}}>
+          </div>
+          <div class="order-btn col-lg-12">
+            <a (click)="addToCart(item.name, item.description, item.price)">
+              <button class="choiceBtn">Add To Cart</button>
+            </a>
+            <h4 class="customize" data-toggle="modal" data-target="#fullPageModal">Customize</h4>
+          </div>
+
+          <div class="col-lg-12">
+            <form class="pull-left form">
+              <div class="form-group">
+                <label for="sel1" class="quantity">Quantity
+                  <select class="form-control" id="sel1" (change)="selectChangeHandler($event)">
+                    <option *ngFor="let number of quantitySelect; let i = index" [ngValue]=" " (click)="clickDrop(i)">{{number.num}}</option>
+                  </select>
+                </label>
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+      <!--
+      All veggies
+      -->
+      <ul *ngIf="allVeggies" [@flyInOut]="veggiesIn" class="pizza-ul">
+        <li *ngFor="let item of veggiesList" class="each-item col-lg-5 col-lg-offset-1 col-sm-12 row">
+
+          <div class="col-lg-12">
+            <div class="food-description">
+              <h2>{{item.name}}
+                <span class="price"> {{item.price | currency:'USD':true:'1.0-2'}}</span>
+              </h2>
+              <h5>{{item.description}}</h5>
+            </div>
+          </div>
+          <div class="col-lg-12 picture">
+            <img class="food-pic" src={{item.image}}>
+          </div>
+          <div class="order-btn col-lg-12">
+            <a (click)="addToCart(item.name, item.description, item.price)">
+              <button class="choiceBtn">Add To Cart</button>
+            </a>
+            <h4 class="customize" data-toggle="modal" data-target="#fullPageModal">Customize</h4>
+          </div>
+
+          <div class="col-lg-12">
+            <form class="pull-left form">
+              <div class="form-group">
+                <label for="sel1" class="quantity">Quantity
+                  <select class="form-control" id="sel1" (change)="selectChangeHandler($event)">
+                    <option *ngFor="let number of quantitySelect; let i = index" [ngValue]=" " (click)="clickDrop(i)">{{number.num}}</option>
+                  </select>
+                </label>
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <!--
+    Custom Order
+    -->
+    <div class="row custom-container">
+      <div class="custom-item col-lg-11 col-sm-12">
+        <div class="col-lg-12">
+          <div class="custom-description">
+            <h2>Create Your Own</h2>
+            <h5>Create a custom pizza</h5>
+          </div>
+          <div class="col-lg-12 custom-pic">
+            <img src='http://www.plusonepizza.com/images/Ingreadients_small.jpg'>
+          </div>
+          <div class="custom-order-btn col-lg-12">
+            <a>
+              <button type="button" class="custom-choiceBtn" data-toggle="modal" data-target="#fullPageModal">Get
+                Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

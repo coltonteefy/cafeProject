@@ -1,0 +1,40 @@
+<div class="container row" id="body">
+  <div class="col-lg-12 col-md-12 col-sm-12 menu-list">
+    <h1 class="menu-item">Salads</h1>
+    <div class="row">
+      <ul [@flyInOut]="saladIn">
+        <li *ngFor="let item of saladsList" class="each-item col-lg-5 col-lg-offset-1 col-sm-12 row">
+          <div class="col-lg-12">
+            <div class="food-description">
+              <h2>{{item.name}}
+                <span class="price"> {{item.price | currency:'USD':true:'1.0-2'}}</span>
+              </h2>
+              <h5>{{item.description}}</h5>
+            </div>
+          </div>
+          <div class="col-lg-12 picture">
+            <img class="food-pic" src={{item.image}}>
+          </div>
+          <div class="order-btn col-lg-12">
+            <a (click)="addToCart(item.name, item.description, item.price)">
+              <button class="choiceBtn">Add to cart</button>
+            </a>
+            <h4 class="customize" data-toggle="modal" data-target="#fullPageModal">Customize</h4>
+          </div>
+
+          <div class="col-lg-12">
+            <form class="pull-left form">
+              <div class="form-group">
+                <label for="sel1" class="quantity">Quantity
+                  <select class="form-control" id="sel1" (change)="selectChangeHandler($event)">
+                    <option *ngFor="let number of quantitySelect; let i = index" [ngValue]=" " (click)="clickDrop(i)">{{number.num}}</option>
+                  </select>
+                </label>
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
