@@ -12,4 +12,7 @@ export class ModalPizzaComponent implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+
+  }
 }

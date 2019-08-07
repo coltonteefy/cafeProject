@@ -38,6 +38,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   cartTotalArray = [];
   cartTotal = 0;
   quantityTrack = 0;
+  showDialog: boolean;
 
   constructor(private cartService:CartService) {
   }

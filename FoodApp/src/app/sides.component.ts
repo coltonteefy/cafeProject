@@ -12,4 +12,7 @@ export class SidesComponent implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+
+  }
 }
