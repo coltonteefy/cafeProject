@@ -56,11 +56,19 @@ export class SaladsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('/assets/static-content/menu-list.json')
-      .map(res => res.json())
-      .subscribe(data => {
-        this.saladsList = data.saladsList;
+
+    fetch('assets/static-content/menu-list.json')
+      .then(async res => {
+        const response = await res.json();
+        console.log(response, response.pizzaList);
+        this.saladsList = response.saladsList;
       });
+
+    // this.http.get('/assets/static-content/menu-list.json')
+    //   .map(res => res.json())
+    //   .subscribe(data => {
+    //     this.saladsList = data.saladsList;
+    //   });
 
     this.cartService.changes
       .subscribe(data => {
