@@ -8,9 +8,9 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico",
-        "_redirects"
+        "src/assets",
+        "src/favicon.ico",
+        "src/_redirects"
       ],
       "index": "index.html",
       "main": "main.ts",

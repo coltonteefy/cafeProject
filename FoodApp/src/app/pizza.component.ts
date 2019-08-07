@@ -7,6 +7,8 @@ import {KitchenService} from "./kitchen.service";
 import {Kitchen} from "./kitchen";
 import {state, trigger, style, animate, transition} from '@angular/animations';
 
+// import {access} from "fs";
+
 @Component({
   selector: 'pizza',
   templateUrl: './pizza.component.html',
@@ -79,7 +81,6 @@ export class PizzaComponent implements OnInit {
   }
 
   ngOnInit() {
-
     // access all the pizza lists in menu-list
     this.http.get('/assets/static-content/menu-list.json')
       .map(res => res.json())
