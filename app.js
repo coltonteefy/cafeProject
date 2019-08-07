@@ -13,17 +13,19 @@ app.use('/', routes);
 
 
 // connect to database
-mongoose.connect('mongodb://localhost:27017/customers', function (err, db) {
-    if (err){
-        console.log('could not connect to the database');
-        throw err;
-    }
-    console.log('you are connected to the database');
-});
+// mongoose.connect('mongodb://localhost:27017/customers', function (err, db) {
+//     if (err){
+//         console.log('could not connect to the database');
+//         throw err;
+//     }
+//     console.log('you are connected to the database');
+// });
+
+const PORT = process.env.PORT || 3000;
 
 // start server
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000')
+app.listen(PORT, function () {
+    console.log(`Example app listening on ${PORT}`)
 });
 
 module.exports = app;
