@@ -33,30 +33,30 @@ export class PizzaComponent implements OnInit {
   ];
 
   @Input()
-  cart:Cart;
+  cart: Cart;
   @Input()
-  kitchen:Kitchen;
+  kitchen: Kitchen;
   @Input()
-  visible:boolean;
+  visible: boolean;
   @Output()
-  visibleChange:EventEmitter<boolean> = new EventEmitter<boolean>();
+  visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private randomNumber = (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   private randomLetter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
   private cartId;
 
-  innerWidth:number;
+  innerWidth: number;
   quantity = 0;
-  newQuantity:any = [];
-  multiOrderIndex:number;
-  originalPrice:number;
+  newQuantity: any = [];
+  multiOrderIndex: number;
+  originalPrice: number;
   size: string = 'small';
 
   // determine pizza list selection
-  allPizza:boolean = true;
-  allMeats:boolean = false;
-  allChicken:boolean = false;
-  allVeggies:boolean = false;
+  allPizza: boolean = true;
+  allMeats: boolean = false;
+  allChicken: boolean = false;
+  allVeggies: boolean = false;
 
   // animation triggers
   allIn = 'in';
@@ -71,17 +71,17 @@ export class PizzaComponent implements OnInit {
   veggiesList;
 
 
-  constructor(private renderer2:Renderer2,
-              private el:ElementRef,
-              private cartService:CartService,
-              private kitchenService:KitchenService,
-              private http:Http) {
+  constructor(private renderer2: Renderer2,
+              private el: ElementRef,
+              private cartService: CartService,
+              private kitchenService: KitchenService,
+              private http: Http) {
   }
 
   ngOnInit() {
 
     // access all the pizza lists in menu-list
-    this.http.get('assets/static-content/menu-list.json')
+    this.http.get('./assets/static-content/menu-list.json')
       .map(res => res.json())
       .subscribe(data => {
         this.pizzaList = data.pizzaList;
@@ -104,7 +104,7 @@ export class PizzaComponent implements OnInit {
   }
 
   // add items to cart and kitchen
-  addToCart(name:string, description:string, price:number, quantity:number) {
+  addToCart(name: string, description: string, price: number, quantity: number) {
     this.cartId = this.randomLetter.concat(this.randomNumber.toString());
 
     if (this.quantity >= 1) {
@@ -119,8 +119,7 @@ export class PizzaComponent implements OnInit {
         this.newQuantity.push(this.cartService.store.value.cart[this.multiOrderIndex].quantity);
         price = this.originalPrice * this.newQuantity.reduce(this.getSum);
         this.cartService.updateCartQuantityAndPrice(this.multiOrderIndex, this.newQuantity.reduce(this.getSum), price);
-      }
-      else
+      } else
         this.cartService.addToCart({
           name: name,
           description: description,
@@ -193,7 +192,7 @@ export class PizzaComponent implements OnInit {
   }
 
   //event handler for the select element's change event
-  selectChangeHandler(event:any) {
+  selectChangeHandler(event: any) {
     //update the ui
     this.quantity = event.target.value;
   }

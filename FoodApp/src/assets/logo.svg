@@ -6,11 +6,11 @@
 	.st0{fill:#F7931E;stroke:#A3703C;stroke-width:0.5;stroke-miterlimit:10;}
 	.st1{fill:#C1272D;}
 	.st2{fill:#E33217;}
-	.st3{fill:none;stroke:#FFFFFF;stroke-width:0.25;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#f7f7f796;stroke-width:0.25;stroke-miterlimit:10;}
 	.st4{display:none;fill:none;stroke:#4D4D4D;stroke-width:0.25;stroke-miterlimit:10;}
 	.st5{fill:#FFFFFF;}
-	.st6{font-family:'Penna';}
-	.st7{font-size:8.9625px;}
+	.st6{font-family: 'Saira Condensed', sans-serif;}
+	.st7{font-size:6.1px;}
 </style>
 <path class="st0" d="M1,11C1,5.5,5.9,1,12,1s11,4.5,11,10"/>
 <circle class="st1" cx="8.5" cy="6.5" r="1"/>

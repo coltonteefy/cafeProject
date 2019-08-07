@@ -31,18 +31,19 @@ export class DrinkMenuComponent implements OnInit {
   ];
 
   @Input()
-  cart:Cart;
+  cart: Cart;
   @Input()
-  kitchen:Kitchen;
+  kitchen: Kitchen;
 
+  // tslint:disable-next-line:no-bitwise
   private randomNumber = (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   private randomLetter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
   private cartId;
 
-  innerWidth:number;
-  newQuantity:any = [];
-  multiOrderIndex:number;
-  originalPrice:number;
+  innerWidth: number;
+  newQuantity: any = [];
+  multiOrderIndex: number;
+  originalPrice: number;
   // totalPrice = 0;
   // cartItems:Cart[];
   multipleDrinkPrice = 0;
@@ -56,19 +57,19 @@ export class DrinkMenuComponent implements OnInit {
   twentyOzIn = 'out';
 
   // determine drink size list selection
-  allTwoLitersOpen:boolean = true;
-  allTwentyOzOpen:boolean = false;
+  allTwoLitersOpen: boolean = true;
+  allTwentyOzOpen: boolean = false;
 
 
-  constructor(private renderer2:Renderer2,
-              private el:ElementRef,
-              private cartService:CartService,
-              private kitchenService:KitchenService,
-              private http:Http) {
+  constructor(private renderer2: Renderer2,
+              private el: ElementRef,
+              private cartService: CartService,
+              private kitchenService: KitchenService,
+              private http: Http) {
   }
 
   ngOnInit() {
-    this.http.get('assets/static-content/menu-list.json')
+    this.http.get('./assets/static-content/menu-list.json')
       .map(res => res.json())
       .subscribe(data => {
         this.twoLiterDrinkList = data.twoLiterDrinkList;
@@ -82,7 +83,7 @@ export class DrinkMenuComponent implements OnInit {
   }
 
   // add items to cart and kitchen
-  addToCart(name:string, description:string, price:number, quantity:number) {
+  addToCart(name: string, description: string, price: number, quantity: number) {
     this.cartId = this.randomLetter.concat(this.randomNumber.toString());
 
     if (this.quantity >= 1) {
@@ -97,15 +98,14 @@ export class DrinkMenuComponent implements OnInit {
         this.newQuantity.push(this.cartService.store.value.cart[this.multiOrderIndex].quantity);
         price = this.originalPrice * this.newQuantity.reduce(this.getSum);
         this.cartService.updateCartQuantityAndPrice(this.multiOrderIndex, this.newQuantity.reduce(this.getSum), price);
-      }
-      else
-      this.cartService.addToCart({
-        name: name,
-        description: description,
-        price: price,
-        id: this.cartId,
-        quantity: quantity
-      });
+      } else
+        this.cartService.addToCart({
+          name: name,
+          description: description,
+          price: price,
+          id: this.cartId,
+          quantity: quantity
+        });
 
       // this.kitchenService.addToKitchen({name: name, id: this.cartId, quantity: quantity});
       this.randomNumber = (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
@@ -130,13 +130,13 @@ export class DrinkMenuComponent implements OnInit {
     this.twentyOzIn = 'in';
   }
 
-  addQuantity(price:number, index:number) {
+  addQuantity(price: number, index: number) {
     this.quantity++;
     price = price * this.quantity;
     this.multipleDrinkPrice = price;
   }
 
-  minusQuantity(price:number) {
+  minusQuantity(price: number) {
     if (this.quantity > 0) {
       this.quantity--;
       price = price * this.quantity;
@@ -144,9 +144,9 @@ export class DrinkMenuComponent implements OnInit {
     }
   }
 
-  //event handler for the select element's change event
-  selectChangeHandler(event:any) {
-    //update the ui
+  // event handler for the select element's change event
+  selectChangeHandler(event: any) {
+    // update the ui
     this.quantity = event.target.value;
   }
 
