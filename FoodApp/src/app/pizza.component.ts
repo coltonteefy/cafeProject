@@ -82,14 +82,24 @@ export class PizzaComponent implements OnInit {
 
   ngOnInit() {
     // access all the pizza lists in menu-list
-    this.http.get('/assets/static-content/menu-list.json')
-      .map(res => res.json())
-      .subscribe(data => {
-        this.pizzaList = data.pizzaList;
-        this.meatsList = data.meatsList;
-        this.chickenList = data.chickenList;
-        this.veggiesList = data.veggiesList;
+     fetch('assets/static-content/menu-list.json')
+      .then(async res => {
+        const response = await res.json();
+        console.log(response, response.pizzaList);
+        this.pizzaList = response.pizzaList;
+            this.meatsList = response.meatsList;
+            this.chickenList = response.chickenList;
+            this.veggiesList = response.veggiesList;
       });
+
+    // this.http.get('/assets/static-content/menu-list.json')
+    //   .map(res => res.json())
+    //   .subscribe(data => {
+    //     this.pizzaList = data.pizzaList;
+    //     this.meatsList = data.meatsList;
+    //     this.chickenList = data.chickenList;
+    //     this.veggiesList = data.veggiesList;
+    //   });
 
     // getting cart service data for cart
     this.cartService.changes
