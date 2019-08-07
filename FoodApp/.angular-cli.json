@@ -6,11 +6,11 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "FoodApp/dist",
       "assets": [
-        "src/assets",
-        "src/favicon.ico",
-        "src/_redirects"
+        "assets",
+        "favicon.ico",
+        "_redirects"
       ],
       "index": "index.html",
       "main": "main.ts",
