@@ -69,7 +69,7 @@ export class DrinkMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('./assets/static-content/menu-list.json')
+    this.http.get('/assets/static-content/menu-list.json')
       .map(res => res.json())
       .subscribe(data => {
         this.twoLiterDrinkList = data.twoLiterDrinkList;

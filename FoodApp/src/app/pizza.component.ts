@@ -81,7 +81,7 @@ export class PizzaComponent implements OnInit {
   ngOnInit() {
 
     // access all the pizza lists in menu-list
-    this.http.get('./assets/static-content/menu-list.json')
+    this.http.get('/assets/static-content/menu-list.json')
       .map(res => res.json())
       .subscribe(data => {
         this.pizzaList = data.pizzaList;
