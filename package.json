@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
-    "mongodb": "^2.2.31",
+    "mongodb": "^3.6.1",
     "mongoose": "^4.11.12",
     "ng-click-outside": "^2.3.5",
     "nodemailer": "^4.0.1",
